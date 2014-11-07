@@ -39,7 +39,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AreaServices.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ProjectTasks.Business.Domain.Entities\ProjectTasks.Business.Domain.Entities.csproj">
+      <Project>{9431ed32-fc10-4d14-a3bd-2e323c48b33c}</Project>
+      <Name>ProjectTasks.Business.Domain.Entities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ProjectTasks.Business.Services.Interfaces\ProjectTasks.Business.Services.Interfaces.csproj">
+      <Project>{c5a222b9-a906-49cb-aa45-e4575746f08c}</Project>
+      <Name>ProjectTasks.Business.Services.Interfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ProjectTasks.Data.Interfaces\ProjectTasks.Data.Interfaces.csproj">
+      <Project>{45ae1329-f8be-4495-91a2-ab5d13e5622f}</Project>
+      <Name>ProjectTasks.Data.Interfaces</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

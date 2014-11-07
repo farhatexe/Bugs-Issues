@@ -5,6 +5,7 @@
     using ProjectTasks.Data.EF;
     using ProjectTasks.Data.Interfaces;
     using ProjectTasks.Data.Tests.Extensions;
+    using System;
     using System.Linq;
 
     /// <summary>
@@ -70,13 +71,13 @@
         [TestMethod]
         public void CreateArea()
         {
-            Area parent = new Area() { Label = "Parent 1" };
+            Area parent = new Area() { Label = "Parent 1", CreationDate = DateTime.Now, UpdateDate = DateTime.Now, CreationLogin = "M3gur0", UpdateLogin = "M3gur0" };
 
-            this.repository.Add(new Area() { Label = "Area 1", Parent = parent });
-            this.repository.Add(new Area() { Label = "Area 2" });
-            this.repository.Add(new Area() { Label = "Area 3" });
-            this.repository.Add(new Area() { Label = "Area 4" });
-            this.repository.Add(new Area() { Label = "Area 5" });
+            this.repository.Add(new Area() { Label = "Area 1", Parent = parent, CreationDate = DateTime.Now, UpdateDate = DateTime.Now, CreationLogin = "M3gur0", UpdateLogin = "M3gur0" });
+            this.repository.Add(new Area() { Label = "Area 2", CreationDate = DateTime.Now, UpdateDate = DateTime.Now, CreationLogin = "M3gur0", UpdateLogin = "M3gur0" });
+            this.repository.Add(new Area() { Label = "Area 3", CreationDate = DateTime.Now, UpdateDate = DateTime.Now, CreationLogin = "M3gur0", UpdateLogin = "M3gur0" });
+            this.repository.Add(new Area() { Label = "Area 4", CreationDate = DateTime.Now, UpdateDate = DateTime.Now, CreationLogin = "M3gur0", UpdateLogin = "M3gur0" });
+            this.repository.Add(new Area() { Label = "Area 5", CreationDate = DateTime.Now, UpdateDate = DateTime.Now, CreationLogin = "M3gur0", UpdateLogin = "M3gur0" });
 
             this.repository.Context.SaveChanges();
             

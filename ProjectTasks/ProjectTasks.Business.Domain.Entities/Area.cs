@@ -1,5 +1,6 @@
 ﻿namespace ProjectTasks.Business.Domain.Entities
 {
+    using System;
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
 
@@ -33,6 +34,42 @@
         /// </value>
         [Required, StringLength(64)]
         public string Label { get; set; }
+
+        /// <summary>
+        /// Gets or sets the creation date.
+        /// </summary>
+        /// <value>
+        /// The creation date.
+        /// </value>
+        [Required]
+        public DateTime CreationDate{ get; set; }
+
+        /// <summary>
+        /// Gets or sets the creation login.
+        /// </summary>
+        /// <value>
+        /// The creation login.
+        /// </value>
+        [Required, StringLength(64)]
+        public string CreationLogin { get; set; }
+
+        /// <summary>
+        /// Gets or sets the update date.
+        /// </summary>
+        /// <value>
+        /// The update date.
+        /// </value>
+        [Required]
+        public DateTime UpdateDate { get; set; }
+
+        /// <summary>
+        /// Gets or sets the update login.
+        /// </summary>
+        /// <value>
+        /// The update login.
+        /// </value>
+        [Required, StringLength(64)]
+        public string UpdateLogin { get; set; }
 
         /// <summary>
         /// Gets or sets the parent.
