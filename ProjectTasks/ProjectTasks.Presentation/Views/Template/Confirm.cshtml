@@ -1,0 +1,23 @@
+﻿@{ Layout = "~/Views/Shared/ModalLayout.cshtml"; }
+
+<div class="modal-content">
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true" data-ng-click="cancel()"></button>
+        <h4 class="modal-title">@Resources.Global.Confirm_Delete_Title</h4>
+    </div>
+    <div class="modal-body">
+        @Resources.Global.Confirm_Delete_Content
+    </div>
+    <div class="modal-footer">
+        <div class="pull-left">
+            <button title="@Resources.Global.No" value="@Resources.Global.No" class="btn btn-default @BootstrapColors.Red.Red_Intense" type="button" data-ng-click="cancel()">
+                @Resources.Global.No
+            </button>
+        </div>
+        <div class="pull-right">
+            <button title="@Resources.Global.Yes" value="@Resources.Global.Yes" class="btn btn-default @BootstrapColors.Green.Green_Jungle" type="button" data-ng-click="confirm()">
+                @Resources.Global.Yes
+            </button>
+        </div>
+    </div>
+</div>

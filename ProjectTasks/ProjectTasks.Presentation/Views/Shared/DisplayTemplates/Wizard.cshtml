@@ -1,0 +1,86 @@
+﻿@model Wizard
+
+@{    
+    var wizardPortlet = new Portlet(Model.Id);
+    wizardPortlet.Color = Model.Color;
+    wizardPortlet.CssClass = "box";
+    
+    wizardPortlet.Caption = @<text>
+        @(Model.Caption == null ? string.Empty : Model.Caption(Html) + " - ")<span class="step-title">@string.Format(Resources.Global.Wizard_StepTitle, 1, @Model.Steps.Count)</span>
+    </text>;
+    
+    wizardPortlet.Actions = @<text>
+            <a href="javascript:;" class="btn btn-default btn-sm button-previous disabled" style="display:none;" title="@Resources.Global.Previous">
+                <i class="fa @FontAwesome.Chevron_left"></i>
+            </a>
+            <a href="javascript:;" class="btn btn-default btn-sm button-next" title="@Resources.Global.Next">
+                <i class="fa @FontAwesome.Chevron_right"></i>
+            </a>
+            <a href="javascript:;" class="btn btn-default btn-sm button-submit" style="display:none;" title="@Resources.Global.Submit">
+                <i class="fa @FontAwesome.Send"></i>
+            </a>
+    </text>;
+    
+    wizardPortlet.Content = @<text>
+        <div class="form form-horizontal">
+            <div class="form-wizard">
+                <div class="form-body">
+                    <ul class="nav nav-pills nav-justified steps">
+                        @foreach (var step in Model.Steps)
+                        {
+                            <li class="@(Model.Steps.IndexOf(step) == 0 ? "active" : "")">
+                                <a href="#@step.Id" data-toggle="tab" class="step">
+                                    <span class="number">@(Model.Steps.IndexOf(step) + 1) </span>
+                                    <span class="desc"><i class="fa @step.Icon"></i> @step.Caption</span>
+                                </a>
+                            </li>
+                        }
+                    </ul>
+                    <div id="bar" class="progress progress-striped" role="progressbar">
+                        <div class="progress-bar progress-bar-success" style="width: 0%;"></div>
+                    </div>
+                    <div class="tab-content">
+                        <div class="alert alert-danger display-none">
+                            <button class="close" data-dismiss="alert"></button>
+                            You have some form errors. Please check below.
+                        </div>
+                        <div class="alert alert-success display-none">
+                            <button class="close" data-dismiss="alert"></button>
+                            Your form validation is successful!
+                        </div>
+                        @foreach (var step in Model.Steps)
+                        {
+                            <div class="tab-pane @(Model.Steps.IndexOf(step) == 0 ? "active" : "")" id="@step.Id">
+                                <h3 class="block">@step.Label</h3>
+                                <div class="form-group">
+                                    @step.Content(Html)
+                                </div>
+                            </div>
+                        }
+                    </div>
+                    <div class="fluid clearfix">
+                        <div class="pull-right">
+                            <a href="javascript:;" class="btn default button-previous disabled" style="display: none;">
+                                <i class="fa @FontAwesome.Chevron_left"></i>&nbsp;@Resources.Global.Previous
+                            </a>   
+                            <a href="javascript:;" class="btn blue button-next">
+                                @(Resources.Global.Next)&nbsp;<i class="fa @FontAwesome.Chevron_right"></i>
+                            </a>
+                            <a href="javascript:;" class="btn green button-submit" style="display: none;">
+                                @(Resources.Global.Submit)&nbsp;<i class="fa @FontAwesome.Send"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </text>;
+}
+
+@Html.DisplayFor(x => wizardPortlet)
+
+@section scripts {
+    <script type="text/javascript">
+        $('#@Model.Id').formWizard();
+    </script>
+}

@@ -1,0 +1,33 @@
+﻿@model SiteMapPathHelperModel
+@{
+    var currentNode = @Model.Nodes.FirstOrDefault(x => x.IsCurrentNode);
+}
+@if (currentNode != null) {
+    <div class="row">
+        <div class="@BootstrapColumns.Large.Col12">
+            <h3 class="page-title">@((String.IsNullOrEmpty(currentNode.Description) ? currentNode.Title : currentNode.Description))</h3>
+            <ul class="page-breadcrumb breadcrumb">
+                @foreach (var item in Model.Nodes)
+                {
+                    <li class="start @(item.IsCurrentNode ? "active" : "")">
+                        <a href="#@(item.IsClickable ? item.Url : "javascript:;")" @(String.Join(" ", item.Attributes.Where(x => x.Key.StartsWith("data-", StringComparison.OrdinalIgnoreCase)).Select(x => String.Format("{0}=\"{1}\"", x.Key, x.Value))))>
+                            @if (item.Attributes.Any(x => x.Key == "icon"))
+                            {
+                                <i class="fa @String.Join(" ", item.Attributes.Where(x => x.Key == "icon").Select(x => x.Value))"></i>
+                            }
+                            <span class="title">@item.Title</span>
+                            @if (item.IsCurrentNode)
+                            {
+                                <span class="selected"></span>
+                            }
+                        </a>
+                        @if (!item.IsCurrentNode)
+                        {
+                            <i class="fa @FontAwesome.Angle_right"></i>
+                        }
+                    </li>
+                }
+            </ul>
+        </div>
+    </div>
+}

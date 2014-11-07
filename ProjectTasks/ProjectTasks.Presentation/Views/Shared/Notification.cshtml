@@ -1,0 +1,36 @@
+﻿<a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
+    <i data-ng-if="notifications.length > 0" class="fa @FontAwesome.Warning"></i>
+    <span data-ng-if="notifications.length > 0" class="badge badge-default">{{ notifications.length }}</span>
+</a>
+<ul data-ng-if="notifications.length > 0" class="dropdown-menu">
+    <li>
+        <p>{{ message }}</p>
+    </li>
+    <li>
+        <ul class="dropdown-menu-list scroller" style="height: 250px;" data-ng-repeat="item in notifications">
+            <li>
+                <a href="#" data-ng-switch="" data-on="item.NotificationTypeCode">
+                    <span data-ng-switch-when="Successful" class="label label-sm label-icon label-success">
+                        <i class="fa @FontAwesome.Thumbs_up"></i>
+                    </span>
+                    <span data-ng-switch-when="Warning" class="label label-sm label-icon label-warning">
+                        <i class="fa @FontAwesome.Bell_o"></i>
+                    </span>
+                    <span data-ng-switch-when="Error" class="label label-sm label-icon label-danger">
+                        <i class="fa @FontAwesome.Bolt"></i>
+                    </span>
+                    <span data-ng-switch-when="Info" class="label label-sm label-icon label-info">
+                        <i class="fa @FontAwesome.Info"></i>
+                    </span>
+                    &nbsp;{{ item.Title }}&nbsp;
+                    <span data-am-time-ago="item.Date" class="time"></span>
+                </a>
+            </li>
+        </ul>
+    </li>
+    <li class="external">
+        <a href="#">
+            @Resources.Notification.Notification_See_All <i class="m-icon-swapright"></i>
+        </a>
+    </li>
+</ul>

@@ -30,8 +30,55 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.AspNet.SignalR.Core">
+      <HintPath>..\packages\Microsoft.AspNet.SignalR.Core.2.1.2\lib\net45\Microsoft.AspNet.SignalR.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin">
+      <HintPath>..\packages\Microsoft.Owin.2.0.1\lib\net45\Microsoft.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security">
+      <HintPath>..\packages\Microsoft.Owin.Security.2.0.1\lib\net45\Microsoft.Owin.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Owin">
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.2\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.2\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.2\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.2\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.2\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.2\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -39,7 +86,45 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Authentication\Attributes\ApplicationAuthorizeAttribute.cs" />
+    <Compile Include="Authentication\Constants\Permissions.cs" />
+    <Compile Include="Authentication\Extensions\UrlHelperExtension.cs" />
+    <Compile Include="Authentication\Manager\RegulatedActionManager.cs" />
+    <Compile Include="Bootstrap\Component\DataTables\DataTablesBinder.cs" />
+    <Compile Include="Bootstrap\Component\DataTables\DataTablesColumn.cs" />
+    <Compile Include="Bootstrap\Component\DataTables\DataTablesJsonBinder.cs" />
+    <Compile Include="Bootstrap\Component\DataTables\DataTablesResult.cs" />
+    <Compile Include="Bootstrap\Component\DataTables\DataTablesSortedRequest.cs" />
+    <Compile Include="Bootstrap\Component\DataTables\DataTablesSortedResponse.cs" />
+    <Compile Include="Bootstrap\Component\DataTables\DefaultDataTablesRequest.cs" />
+    <Compile Include="Bootstrap\Component\DataTables\IDataTablesRequest.cs" />
+    <Compile Include="Bootstrap\Component\Portlet\Portlet.cs" />
+    <Compile Include="Bootstrap\Component\Wizard\Wizard.cs" />
+    <Compile Include="Bootstrap\Component\Wizard\WizardStep.cs" />
+    <Compile Include="Bootstrap\Constants\BootstrapColors.cs" />
+    <Compile Include="Bootstrap\Constants\BootstrapColumns.cs" />
+    <Compile Include="Bootstrap\Constants\FontAwesome.cs" />
+    <Compile Include="Bootstrap\Extensions\DataTablesColumnExtenders.cs" />
+    <Compile Include="Bootstrap\Extensions\DataTablesSortedResponseExtenders.cs" />
+    <Compile Include="Bootstrap\Extensions\HtmlExtension.cs" />
+    <Compile Include="Notification\NotificationHub.cs" />
+    <Compile Include="Notification\NotificationManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Validation\Attributes\JsonExceptionFilterAttribute.cs" />
+    <Compile Include="Validation\Extensions\ModelStateDictionaryExtension.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ProjectTasks.Crosscuttings.IoC\ProjectTasks.Crosscuttings.IoC.csproj">
+      <Project>{2346d764-ae74-452c-aa22-2e0a0ef94e92}</Project>
+      <Name>ProjectTasks.Crosscuttings.IoC</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ProjectTasks.Crosscuttings\ProjectTasks.Crosscuttings.csproj">
+      <Project>{d2e9c202-f408-4a29-8c02-3b996108feea}</Project>
+      <Name>ProjectTasks.Crosscuttings</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -1,0 +1,11 @@
+/* Metronic custom */
+body div.page-header.navbar.navbar-fixed-top {
+    z-index: 1049 !important;
+}
+.form-wizard ul.nav a{
+    color: #555;
+    pointer-events:none;
+}
+.modal.fullscreen .modal-dialog {
+    width: 95%;
+}

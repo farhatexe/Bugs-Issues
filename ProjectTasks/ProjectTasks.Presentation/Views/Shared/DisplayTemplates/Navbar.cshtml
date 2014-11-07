@@ -1,0 +1,14 @@
+﻿@model MvcSiteMapProvider.Web.Html.Models.MenuHelperModel
+@using MvcSiteMapProvider.Web.Html.Models
+
+<div class="page-sidebar-wrapper">
+    <div class="page-sidebar navbar-collapse collapse">
+        <ul class="page-sidebar-menu" data-auto-scroll="true" data-slide-speed="200" data-ng-controller="sidebarController">
+            <li class="wrapper active" style="height: 1em"></li>
+            @foreach (var node in Model.Nodes)
+            {
+                @Html.DisplayFor(m => node)
+            }
+        </ul>
+    </div>
+</div>

@@ -1,0 +1,127 @@
+﻿<div class="row">
+    <div class="@BootstrapColumns.Medium.Col9 @BootstrapColumns.Small.Col8">
+        @{
+            var portlet = new Portlet("welcome");
+            portlet.Scrollable = true;
+            portlet.Color = BootstrapColors.Purple.Purple_Seance;
+            portlet.CssClass = "box";
+            
+            portlet.Caption = @<text>
+                @Html.IconifyMe(FontAwesome.Angellist)
+                @Resources.Home.WelcomePortlet_Caption
+            </text>;
+
+            portlet.Actions = @<text>
+				<a href="#" class="btn btn-default btn-sm">
+				<i class="fa fa-pencil"></i> @Resources.Global.Edit </a>
+				<a href="#" class="btn btn-default btn-sm">
+				<i class="fa fa-plus"></i> @Resources.Global.Add </a>
+            </text>;
+            
+            portlet.Content = @<text>
+			    <div class="scroller" style="height: 200px">
+                    <p>
+                        <strong>Scrollable</strong><br />
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit fusce vel sapien elit in malesuada semper mi, id sollicitudin urna fermentum ut fusce varius nisl ac ipsum gravida vel pretium tellus.
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit fusce vel sapien elit in malesuada semper mi, id sollicitudin urna fermentum ut fusce varius nisl ac ipsum gravida vel pretium tellus.
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit fusce vel sapien elit in malesuada semper mi, id sollicitudin urna fermentum ut fusce varius nisl ac ipsum gravida vel pretium tellus.
+                    </p>
+                </div>
+            </text>;
+        }
+
+        @Html.DisplayFor(x => portlet)
+    </div>
+    
+    <div class="@BootstrapColumns.Medium.Col12 @BootstrapColumns.Small.Col12">
+        @{
+            var wizard = new Wizard("test");
+            wizard.Color = BootstrapColors.Red.Red_Default;
+            wizard.AddStep("1stStep", "1st step", @<text>
+                <div class="@BootstrapColumns.Large.Col12">
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit fusce vel sapien elit.
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit fusce vel sapien elit.
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit fusce vel sapien elit.
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit fusce vel sapien elit.
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit fusce vel sapien elit.
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit fusce vel sapien elit.
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit fusce vel sapien elit.
+                    </p>
+                </div>
+            </text>);
+                   
+            wizard.AddStep("2ndStep", "2nd step", @<text>
+                <div class="@BootstrapColumns.Large.Col12">
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit fusce vel sapien elit.
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit fusce vel sapien elit.
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit fusce vel sapien elit.
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit fusce vel sapien elit.
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit fusce vel sapien elit.
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit fusce vel sapien elit.
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit fusce vel sapien elit.
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit fusce vel sapien elit.
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit fusce vel sapien elit.
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit fusce vel sapien elit.
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit fusce vel sapien elit.
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit fusce vel sapien elit.
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit fusce vel sapien elit.
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit fusce vel sapien elit.
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit fusce vel sapien elit.
+                    </p>
+                </div>
+            </text>);
+                   
+            wizard.AddStep("3rdStep", "3rd step", @<text>
+                <div class="@BootstrapColumns.Large.Col12">
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit fusce vel sapien elit.
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit fusce vel sapien elit.
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit fusce vel sapien elit.
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit fusce vel sapien elit.
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit fusce vel sapien elit.
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit fusce vel sapien elit.
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit fusce vel sapien elit.
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit fusce vel sapien elit.
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit fusce vel sapien elit.
+                    </p>
+                </div>
+            </text>);
+                   
+            wizard.AddStep("4thStep", "4th step", @<text>
+                <div class="@BootstrapColumns.Large.Col12">
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit fusce vel sapien elit.
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit fusce vel sapien elit.
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit fusce vel sapien elit.
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit fusce vel sapien elit.
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit fusce vel sapien elit.
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit fusce vel sapien elit.
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit fusce vel sapien elit.
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit fusce vel sapien elit.
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit fusce vel sapien elit.
+                    </p>
+                </div>
+            </text>);
+                   
+            wizard.AddStep("5thStep", "5th step", @<text>
+                <div class="@BootstrapColumns.Large.Col12">
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit fusce vel sapien elit.
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit fusce vel sapien elit.
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit fusce vel sapien elit.
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit fusce vel sapien elit.
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit fusce vel sapien elit.
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit fusce vel sapien elit.
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit fusce vel sapien elit.
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit fusce vel sapien elit.
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit fusce vel sapien elit.
+                    </p>
+                </div>
+            </text>);
+        }
+        
+        @Html.DisplayFor(c => wizard)
+    </div>
+</div>

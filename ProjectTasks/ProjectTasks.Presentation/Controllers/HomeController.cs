@@ -1,29 +1,28 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
-
-namespace ProjectTasks.Presentation.Controllers
+﻿namespace Mercato.Presentation.Controllers
 {
+    using System.Web.Mvc;
+
+    /// <summary>
+    /// Controller for welcome page.
+    /// </summary>
+    [Authorize]
     public class HomeController : Controller
     {
+        /// <summary>
+        /// Action to load dashboard view.
+        /// </summary>
+        /// <returns></returns>
+        public ActionResult Dashboard()
+        {
+            return View();
+        }
+
+        /// <summary>
+        /// Action to load index view.
+        /// </summary>
+        /// <returns></returns>
         public ActionResult Index()
         {
-            return View();
-        }
-
-        public ActionResult About()
-        {
-            ViewBag.Message = "Your application description page.";
-
-            return View();
-        }
-
-        public ActionResult Contact()
-        {
-            ViewBag.Message = "Your contact page.";
-
             return View();
         }
     }
