@@ -2,7 +2,6 @@
 {
     using System;
     using System.Collections.Generic;
-    using System.Linq;
 
     /// <summary>
     /// Provides utils to extend LinQ.
@@ -10,16 +9,12 @@
     public static class LinqExtension
     {
         /// <summary>
-        ///   This method extends the LINQ methods to flatten a collection of 
-        ///   items that have a property of children of the same type.
+        /// This method extends the LINQ methods to flatten a collection of items that have a property of children of the same type.
         /// </summary>
-        /// <typeparam name = "T">Item type.</typeparam>
-        /// <param name = "source">Source collection.</param>
-        /// <param name = "childPropertySelector">
-        ///   Child property selector delegate of each item. 
-        ///   IEnumerable'T' childPropertySelector(T itemBeingFlattened)
-        /// </param>
-        /// <returns>Returns a one level list of elements of type T.</returns>
+        /// <typeparam name="T">Item type.</typeparam>
+        /// <param name="source">Source collection.</param>
+        /// <param name="childPropertySelector">Child property selector delegate of each item. IEnumerable'T' childPropertySelector(T itemBeingFlattened)</param>
+        /// <param name="result">The result.</param>
         public static void Flatten<T>(this IEnumerable<T> source, Func<T, IEnumerable<T>> childPropertySelector, ref List<T> result)
         {
             if (source == null) return;
