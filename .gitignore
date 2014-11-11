@@ -181,3 +181,5 @@ UpgradeLog*.htm
 
 # Microsoft Fakes
 FakesAssemblies/
+/ProjectTasks/ProjectTasks.Presentation/Content/Meguro/plugins/jquery-treetable/css/jquery.treetable.theme.default.css.unused
+/ProjectTasks/ProjectTasks.Presentation/Content/Meguro/plugins/jquery-treetable/css
