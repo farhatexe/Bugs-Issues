@@ -1,0 +1,30 @@
+﻿@model Group
+
+<div class="row form-horizontal">
+    <div class="@BootstrapColumns.Medium.Col12">
+        <div class="form-body">
+            <div class="form-group">
+                <div class="control-label @BootstrapColumns.Medium.Col4">
+                    @Html.DisplayNameFor(c => c.Label)
+                    <span class="required" aria-required="true">*</span>
+                </div>
+                <div class="@BootstrapColumns.Medium.Col8">
+                    <div class="input-icon right">
+                        @Html.EditorFor(c => c.Label, new { htmlAttributes = new { @class = "form-control", @data_ng_model = "data.Label" } })
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="control-label @BootstrapColumns.Medium.Col4">
+                    @Html.DisplayNameFor(c => c.Description)
+                    <span class="required" aria-required="true">*</span>
+                </div>
+                <div class="@BootstrapColumns.Medium.Col8">
+                    <div class="input-icon right">
+                        @Html.EditorFor(c => c.Description, new { htmlAttributes = new { @class = "form-control", @data_ng_model = "data.Description" } })
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

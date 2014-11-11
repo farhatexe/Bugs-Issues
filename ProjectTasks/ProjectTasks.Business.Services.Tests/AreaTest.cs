@@ -52,7 +52,7 @@
         [TestMethod]
         public void GetAll()
         {
-            Assert.IsTrue(this.services.GetAll().Any());
+            Assert.IsTrue(this.services.GetAllAreas().Any());
         }
 
         /// <summary>
@@ -61,8 +61,8 @@
         [TestMethod]
         public void Get()
         {
-            var all = this.services.GetAll();
-            var area = this.services.Get(all.Select(a => a.Id).First());
+            var all = this.services.GetAllAreas();
+            var area = this.services.GetArea(all.Select(a => a.Id).First());
 
             Assert.IsInstanceOfType(area, typeof(Area));
             Assert.IsNotNull(area);
@@ -77,9 +77,9 @@
             string expectedLabel = "Test area";
 
             var area = new Area() { Label = expectedLabel };
-            this.services.Create(area);
+            this.services.CreateArea(area);
 
-            var expected = this.services.GetAll().Where(a => a.Label.Equals(expectedLabel)).FirstOrDefault();
+            var expected = this.services.GetAllAreas().Where(a => a.Label.Equals(expectedLabel)).FirstOrDefault();
             
             Assert.IsNotNull(expected);
             Assert.AreEqual(expected.Label, expectedLabel);
@@ -94,10 +94,10 @@
             string expectedLabel = "Test update area";
 
             this.Create();
-            var area = this.services.GetAll().FirstOrDefault();
+            var area = this.services.GetAllAreas().FirstOrDefault();
             area.Label = expectedLabel;
 
-            var expected = this.services.Update(area);
+            var expected = this.services.UpdateArea(area);
 
             Assert.IsNotNull(expected);
             Assert.AreEqual(expected.Label, expectedLabel);
@@ -111,7 +111,7 @@
         [ExpectedException(typeof(System.Data.Entity.Validation.DbEntityValidationException))]
         public void CreateFail()
         {
-            this.services.Create(new Area());
+            this.services.CreateArea(new Area());
         }
     }
 }

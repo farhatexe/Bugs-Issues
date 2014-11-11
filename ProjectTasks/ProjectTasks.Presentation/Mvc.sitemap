@@ -4,5 +4,10 @@
             xsi:schemaLocation="http://mvcsitemap.codeplex.com/schemas/MvcSiteMap-File-4.0 MvcSiteMapSchema.xsd">
 
   <mvcSiteMapNode title="Dashboard" controller="home" action="dashboard" icon="fa-home">
+    <mvcSiteMapNode title="Configuration" clickable="false" icon="fa-cogs">
+      <mvcSiteMapNode title="Areas" controller="area" action="index" icon="fa-sitemap" />
+      <mvcSiteMapNode title="Groups" controller="group" action="index" icon="fa-group" />
+      <mvcSiteMapNode title="Users" controller="user" action="index" icon="fa-user" />
+    </mvcSiteMapNode>
   </mvcSiteMapNode>
 </mvcSiteMap>

@@ -1,14 +1,18 @@
 ﻿namespace ProjectTasks.Business.Domain.Entities
 {
     using System;
+    using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
+    using System.Threading;
 
     /// <summary>
     /// Represents an area to split the project in few functional / technical parts.
     /// </summary>
     public class Area : IEntity
     {
+        #region < Properties >
+
         /// <summary>
         /// Gets or sets the identifier.
         /// </summary>
@@ -41,8 +45,7 @@
         /// <value>
         /// The creation date.
         /// </value>
-        [Required]
-        public DateTime CreationDate{ get; set; }
+        public DateTime CreationDate { get; set; }
 
         /// <summary>
         /// Gets or sets the creation login.
@@ -50,7 +53,7 @@
         /// <value>
         /// The creation login.
         /// </value>
-        [Required, StringLength(64)]
+        [StringLength(64)]
         public string CreationLogin { get; set; }
 
         /// <summary>
@@ -59,7 +62,6 @@
         /// <value>
         /// The update date.
         /// </value>
-        [Required]
         public DateTime UpdateDate { get; set; }
 
         /// <summary>
@@ -68,7 +70,7 @@
         /// <value>
         /// The update login.
         /// </value>
-        [Required, StringLength(64)]
+        [StringLength(64)]
         public string UpdateLogin { get; set; }
 
         /// <summary>
@@ -79,5 +81,31 @@
         /// </value>
         [ForeignKey("ParentId")]
         public Area Parent { get; set; }
+
+        /// <summary>
+        /// Gets or sets the children.
+        /// </summary>
+        /// <value>
+        /// The children.
+        /// </value>
+        public ICollection<Area> Children { get; set; }
+
+        #endregion < Properties >
+
+        #region < Constructors >
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Area"/> class.
+        /// </summary>
+        public Area()
+        {
+            this.CreationDate = DateTime.Now;
+            this.CreationLogin = Thread.CurrentPrincipal.Identity.Name;
+
+            this.UpdateDate = DateTime.Now;
+            this.UpdateLogin = Thread.CurrentPrincipal.Identity.Name;
+        }
+
+        #endregion < Constructors >
     }
 }

@@ -1,0 +1,20 @@
+﻿@model Group
+@{ Layout = "~/Views/Shared/ModalLayout.cshtml"; }
+
+<div class="modal-content">
+    <form method="post">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true" data-ng-click="close()"></button>
+            <h4 class="modal-title">Add a new group</h4>
+        </div>
+        <div class="modal-body">
+            @Html.EditorForModel()
+        </div>
+        <div class="modal-footer">
+            <div class="pull-right">
+                <button title="@Resources.Global.Add" value="@Resources.Global.Add" class="btn btn-default fa @FontAwesome.Plus_square" type="button" data-ng-click="add()" />
+                <button title="@Resources.Global.Cancel" value="@Resources.Global.Cancel" class="btn btn-default fa @FontAwesome.Undo" type="button" data-ng-click="cancel()" />
+            </div>
+        </div>
+    </form>
+</div>
