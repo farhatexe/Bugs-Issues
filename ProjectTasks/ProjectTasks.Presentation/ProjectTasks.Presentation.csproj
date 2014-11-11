@@ -173,6 +173,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ApiControllers\AreaController.cs" />
+    <Compile Include="ApiControllers\UserController.cs" />
+    <Compile Include="ApiControllers\GroupController.cs" />
     <Compile Include="App_GlobalResources\Global.designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -211,9 +214,12 @@
     <Compile Include="App_Start\Startup.cs" />
     <Compile Include="App_Start\StyleImagePathBundle.cs" />
     <Compile Include="App_Start\StyleRelativePathTransform.cs" />
+    <Compile Include="Controllers\GroupController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ResourceController.cs" />
     <Compile Include="Controllers\TemplateController.cs" />
+    <Compile Include="Controllers\AreaController.cs" />
+    <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -239,6 +245,9 @@
     <Content Include="Content\Meguro\images\logo.png" />
     <Content Include="Content\Meguro\scripts\app.js" />
     <Content Include="Content\Meguro\scripts\controllers\site.controllers.confirm.js" />
+    <Content Include="Content\Meguro\scripts\controllers\site.controllers.area.js" />
+    <Content Include="Content\Meguro\scripts\controllers\site.controllers.user.js" />
+    <Content Include="Content\Meguro\scripts\controllers\site.controllers.group.js" />
     <Content Include="Content\Meguro\scripts\controllers\site.controllers.home.js" />
     <Content Include="Content\Meguro\scripts\controllers\site.controllers.notification.js" />
     <Content Include="Content\Meguro\scripts\controllers\site.controllers.sidebar.js" />
@@ -3114,13 +3123,24 @@
     <Content Include="Views\Home\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="ApiControllers\" />
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\ProjectTasks.Business.Domain.Entities\ProjectTasks.Business.Domain.Entities.csproj">
+      <Project>{9431ed32-fc10-4d14-a3bd-2e323c48b33c}</Project>
+      <Name>ProjectTasks.Business.Domain.Entities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ProjectTasks.Business.Services.Interfaces\ProjectTasks.Business.Services.Interfaces.csproj">
+      <Project>{c5a222b9-a906-49cb-aa45-e4575746f08c}</Project>
+      <Name>ProjectTasks.Business.Services.Interfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ProjectTasks.Crosscuttings.IoC\ProjectTasks.Crosscuttings.IoC.csproj">
+      <Project>{2346d764-ae74-452c-aa22-2e0a0ef94e92}</Project>
+      <Name>ProjectTasks.Crosscuttings.IoC</Name>
+    </ProjectReference>
     <ProjectReference Include="..\ProjectTasks.Presentation.Core\ProjectTasks.Presentation.Core.csproj">
       <Project>{87124052-c9d6-4110-bceb-061e9b9c4853}</Project>
       <Name>ProjectTasks.Presentation.Core</Name>
@@ -3180,6 +3200,60 @@
       <Generator>GlobalResourceProxyGenerator</Generator>
       <LastGenOutput>Notification.designer.cs</LastGenOutput>
     </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Group\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Group\DisplayTemplates\Group.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Group\Detail.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Group\Edit.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Group\EditorTemplates\Group.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Group\Create.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\User\DisplayTemplates\User.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\User\EditorTemplates\User.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\User\Create.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\User\Detail.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\User\Edit.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\User\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Area\Create.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Area\Detail.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Area\DisplayTemplates\Area.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Area\Edit.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Area\EditorTemplates\Area.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Area\Index.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

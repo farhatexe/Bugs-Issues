@@ -1,0 +1,19 @@
+﻿@model Group
+
+@{ Layout = "~/Views/Shared/ModalLayout.cshtml"; }
+
+<div class="modal-content">
+    <div class="modal-header">
+        <button type="button" class="close" aria-hidden="true" data-ng-click="close()"></button>
+        <h4 class="modal-title">{{ data.Label }}</h4>
+    </div>
+    <div class="modal-body">
+        @Html.DisplayForModel()
+    </div>
+    <div class="modal-footer">
+        <span class="pull-right">
+            <button data-ng-click="openEdit(data.Id)" title="@Resources.Global.Edit" value="@Resources.Global.Edit" class="btn btn-default fa @FontAwesome.Edit" type="button" />
+            <button data-ng-click="close()" title="@Resources.Global.Close" value="@Resources.Global.Close" class="btn btn-default fa @FontAwesome.Close" type="button" />
+        </span>
+    </div>
+</div>

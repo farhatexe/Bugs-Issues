@@ -25,7 +25,13 @@
             ParameterExpression tParam = Expression.Parameter(tType, "x");
 
             MemberExpression valueInNameProperty = Expression.MakeMemberAccess(tParam, prop);
-            UnaryExpression expression = Expression.Convert(valueInNameProperty, typeof(object));
+            
+            UnaryExpression expression = Expression.Convert(
+                valueInNameProperty, 
+                prop.MemberType.Equals(MemberTypes.Property) 
+                    ? (((PropertyInfo)prop).PropertyType)
+                    : typeof(object));
+
             Expression<Func<T, object>> orderByExpression = Expression.Lambda<Func<T, object>>(expression, tParam);
 
             return orderByExpression;

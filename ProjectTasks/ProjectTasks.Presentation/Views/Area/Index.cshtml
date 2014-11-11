@@ -1,0 +1,28 @@
+﻿@model Area
+
+<div class="row">
+    <div class="@BootstrapColumns.Medium.Col12 @BootstrapColumns.Small.Col12">
+        <table data-datatable="" data-dt-options="dtOptions" data-dt-columns="dtColumns" class="table table-hover table-bordered" data-dt-localize="" data-dt-template="rowTemplate">
+            <thead>
+                <tr>
+                    <th data-dt-prop="Id" data-dt-column-option='[{"key": "bSortable", "value": false}, {"key": "sWidth", "value": "13px"}]'></th>
+                    <th data-dt-prop="Id" data-dt-column-option='[{"key": "bSortable", "value": false}, {"key": "sWidth", "value": "13px"}]'></th>
+                    <th data-dt-prop="Label">@Html.DisplayNameFor(x => x.Label)</th>
+                </tr>
+            </thead>
+            <tfoot>
+                <tr>
+                    <td colspan="3">
+                        <a data-ng-click="createArea()" title="@Resources.Global.Add" class="pull-right" href="javascript:void(0);"><i class="fa @FontAwesome.Plus_square"></i>&nbsp;@Resources.Global.Add</a>
+                    </td>
+                </tr>
+            </tfoot>
+        </table>
+    </div>
+</div>
+
+<script type="text/template" id="rowTemplate">
+    <td><a data-ng-click="openArea(Id)" title="@Resources.Global.View" data-id="{{Id}}"><i class="fa @FontAwesome.Search"></i></a></td>
+    <td><a data-ng-click="deleteArea(Id)" title="@Resources.Global.View" data-id="{{Id}}"><i class="fa @FontAwesome.Trash"></i></a></td>
+    <td>{{Label}}</td>
+</script>

@@ -35,7 +35,7 @@
         /// Gets all.
         /// </summary>
         /// <returns>The entire collection of available areas</returns>
-        public IEnumerable<Area> GetAll()
+        public IEnumerable<Area> GetAllAreas()
         {
             return this.areaRepository.All();
         }
@@ -45,7 +45,7 @@
         /// </summary>
         /// <param name="id">The identifier.</param>
         /// <returns>The area that matches the given identifier.</returns>
-        public Area Get(int id)
+        public Area GetArea(int id)
         {
             return this.areaRepository.Single(a => a.Id == id);
         }
@@ -55,7 +55,7 @@
         /// </summary>
         /// <param name="area">The area.</param>
         /// <returns>The created area (with id, creation and update date and creation and update login set).</returns>
-        public Area Create(Area area)
+        public Area CreateArea(Area area)
         {
             area.CreationDate = DateTime.Now;
             area.CreationLogin = Thread.CurrentPrincipal.Identity.Name;
@@ -72,7 +72,7 @@
         /// </summary>
         /// <param name="area">The area.</param>
         /// <returns>The updated area (with update date and update login set).</returns>
-        public Area Update(Area area)
+        public Area UpdateArea(Area area)
         {
             area.UpdateDate = DateTime.Now;
             area.UpdateLogin = Thread.CurrentPrincipal.Identity.Name;
@@ -87,7 +87,7 @@
         /// Deletes area that matches the specified identifier.
         /// </summary>
         /// <param name="id">The identifier.</param>
-        public void Delete(int id)
+        public void DeleteArea(int id)
         {
             var area = this.areaRepository.Single(a => a.Id == id);
             this.areaRepository.Delete(area);
