@@ -89,6 +89,7 @@
             #region < M3gur0 >
 
             bundles.Add(new ScriptBundle("~/Content/meguro-js")
+                .Include("~/Content/meguro/plugins/jquery-treetable/jquery.treetable.js")
                 .IncludeDirectory("~/Content/meguro/scripts/prototypes", "*.js", false)
                 .Include("~/Content/meguro/scripts/app.js")
                 .IncludeDirectory("~/Content/meguro/scripts/directives", "*.js", false)
@@ -97,6 +98,7 @@
                 .IncludeDirectory("~/Content/meguro/scripts/services", "*.js", false));
 
             bundles.Add(new StyleBundle("~/Content/meguro-css")
+                .IncludeDirectory("~/Content/meguro/plugins/jquery-treetable/css", "*.css", false)
                 .IncludeDirectory("~/Content/meguro/css", "*.css", false));
 
             #endregion < M3gur0 >

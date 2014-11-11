@@ -3,10 +3,12 @@
     using ProjectTasks.Business.Domain.Entities;
     using ProjectTasks.Business.Services.Interfaces;
     using ProjectTasks.Crosscuttings.IoC;
+    using ProjectTasks.Crosscuttings.Extensions;
     using ProjectTasks.Presentation.Core.Bootstrap.Component.DataTables;
     using ProjectTasks.Presentation.Core.Bootstrap.Extensions;
     using System.Linq;
     using System.Web.Mvc;
+    using System.Collections.Generic;
 
     /// <summary>
     /// Handles area features.
@@ -22,6 +24,23 @@
         public ActionResult Index()
         {
             return View();
+        }
+
+        /// <summary>
+        /// Return TreeTable view for area feature.
+        /// </summary>
+        /// <returns></returns>
+        public ActionResult TreeTable()
+        {
+            return View();
+        }
+
+        public JsonResult GetAll()
+        {
+            var flattenAreas = new List<Area>();
+            this.areaServices.GetAllAreas().Where(a => a.ParentId == null).ToList().Flatten(a => a.SortedChildren, ref flattenAreas);
+
+            return Json(flattenAreas.Select(a => new { Id = a.Id, ParentId = a.ParentId, Label = a.Label }), JsonRequestBehavior.AllowGet);
         }
 
         /// <summary>

@@ -7,21 +7,18 @@
     });
 
     app.controller('areaController', ['$scope', '$http', 'toastr', 'DTOptionsBuilder', 'DTColumnBuilder', '$modal', function ($scope, $http, toastr, DTOptionsBuilder, DTColumnBuilder, $modal) {
-        $scope.dtOptions = DTOptionsBuilder.newOptions()
-            .withOption('ajax', {
-                url: '/area/getall',
-                type: 'POST'
-            })
-            .withOption('order', [[2, 'asc']])
-            .withDataProp('data')
-            .withOption('serverSide', true)
-            .withOption('bFilter', false)
-            .withOption('bAutoWidth', false)
-            .withPaginationType('simple_numbers');
 
-        $scope.reloadData = function () {
-            $scope.dtOptions.reloadData();
+        $scope.ttOptions = {
+            expandable: true,
+            column: 2
         };
+
+        $http
+            .get("/area/GetAll")
+            .success(function (data) {
+                $scope.data = data;
+                $scope.$broadcast('dataloaded');
+            });
 
         $scope.openArea = function (id) {
             $modal.open({

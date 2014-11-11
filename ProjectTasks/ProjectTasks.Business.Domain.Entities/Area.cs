@@ -5,6 +5,7 @@
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Threading;
+    using System.Linq;
 
     /// <summary>
     /// Represents an area to split the project in few functional / technical parts.
@@ -89,6 +90,19 @@
         /// The children.
         /// </value>
         public ICollection<Area> Children { get; set; }
+
+        /// <summary>
+        /// Gets the sorted children items.
+        /// </summary>
+        public IEnumerable<Area> SortedChildren
+        {
+            get
+            {
+                if (this.Children == null) return this.Children;
+                
+                return this.Children.OrderBy(c => c.Label);
+            }
+        }
 
         #endregion < Properties >
 

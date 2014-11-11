@@ -19,7 +19,18 @@
         /// <param name="context">Context to be used for updating seed data.</param>
         protected override void Seed(ApplicationDataContext context)
         {
-            context.Areas.Add(new Area() { Label = "Area", CreationDate = DateTime.Now, UpdateDate = DateTime.Now, CreationLogin = "M3gur0", UpdateLogin = "M3gur0" });
+            var area = new Area()   { Label = "Area", CreationDate = DateTime.Now, UpdateDate = DateTime.Now, CreationLogin = "M3gur0", UpdateLogin = "M3gur0" };
+            var area1 = new Area()  { Label = "Area 1", Parent = area, CreationDate = DateTime.Now, UpdateDate = DateTime.Now, CreationLogin = "M3gur0", UpdateLogin = "M3gur0" };
+            var area2 = new Area()  { Label = "Area 2", Parent = area, CreationDate = DateTime.Now, UpdateDate = DateTime.Now, CreationLogin = "M3gur0", UpdateLogin = "M3gur0" };
+            var area12 = new Area() { Label = "Area 1.2", Parent = area1, CreationDate = DateTime.Now, UpdateDate = DateTime.Now, CreationLogin = "M3gur0", UpdateLogin = "M3gur0" };
+            var area11 = new Area() { Label = "Area 1.1", Parent = area1, CreationDate = DateTime.Now, UpdateDate = DateTime.Now, CreationLogin = "M3gur0", UpdateLogin = "M3gur0" };
+
+            context.Areas.Add(area);
+            context.Areas.Add(area1);
+            context.Areas.Add(area2);
+            context.Areas.Add(area12);
+            context.Areas.Add(area11);
+
             context.Groups.Add(new Group() { Label = "Admin", CreationDate = DateTime.Now, UpdateDate = DateTime.Now, CreationLogin = "M3gur0", UpdateLogin = "M3gur0" });
             context.Reasons.Add(new Reason() { Label = "New" });
             context.Runs.Add(new Run() { Title = "Run #0" });

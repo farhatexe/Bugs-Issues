@@ -245,6 +245,9 @@
     <Content Include="Content\Meguro\images\limagrain.png" />
     <Content Include="Content\Meguro\images\limagrain2.png" />
     <Content Include="Content\Meguro\images\logo.png" />
+    <Content Include="Content\Meguro\plugins\jquery-treetable\css\jquery.treetable.css" />
+    <Content Include="Content\Meguro\plugins\jquery-treetable\css\jquery.treetable.theme.bootstrap.css" />
+    <Content Include="Content\Meguro\plugins\jquery-treetable\jquery.treetable.js" />
     <Content Include="Content\Meguro\scripts\app.js" />
     <Content Include="Content\Meguro\scripts\controllers\site.controllers.confirm.js" />
     <Content Include="Content\Meguro\scripts\controllers\site.controllers.area.js" />
@@ -253,6 +256,7 @@
     <Content Include="Content\Meguro\scripts\controllers\site.controllers.home.js" />
     <Content Include="Content\Meguro\scripts\controllers\site.controllers.notification.js" />
     <Content Include="Content\Meguro\scripts\controllers\site.controllers.sidebar.js" />
+    <Content Include="Content\Meguro\scripts\directives\site.directives.treetables.js" />
     <Content Include="Content\Meguro\scripts\directives\site.directives.datatables.js" />
     <Content Include="Content\Meguro\scripts\directives\site.directives.select.js" />
     <Content Include="Content\Meguro\scripts\plugins\site.plugins.jquery.serialization.js" />
@@ -3144,6 +3148,10 @@
       <Project>{2346d764-ae74-452c-aa22-2e0a0ef94e92}</Project>
       <Name>ProjectTasks.Crosscuttings.IoC</Name>
     </ProjectReference>
+    <ProjectReference Include="..\ProjectTasks.Crosscuttings\ProjectTasks.Crosscuttings.csproj">
+      <Project>{d2e9c202-f408-4a29-8c02-3b996108feea}</Project>
+      <Name>ProjectTasks.Crosscuttings</Name>
+    </ProjectReference>
     <ProjectReference Include="..\ProjectTasks.Presentation.Core\ProjectTasks.Presentation.Core.csproj">
       <Project>{87124052-c9d6-4110-bceb-061e9b9c4853}</Project>
       <Name>ProjectTasks.Presentation.Core</Name>
@@ -3257,6 +3265,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Area\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Area\TreeTable.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
