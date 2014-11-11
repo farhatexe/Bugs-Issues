@@ -234,6 +234,8 @@
     <Content Include="Content\Angular\ui-bootstrap-0.11.2.min.js" />
     <Content Include="Content\Meguro\css\layout.css" />
     <Content Include="Content\Meguro\images\bck.png" />
+    <Content Include="Content\Meguro\images\favicon.ico" />
+    <Content Include="Content\Meguro\images\favicon.png" />
     <Content Include="Content\Meguro\images\limagrain.png" />
     <Content Include="Content\Meguro\images\limagrain2.png" />
     <Content Include="Content\Meguro\images\logo.png" />
@@ -254,6 +256,7 @@
     <Content Include="Content\Meguro\scripts\services\site.services.toastr.js" />
     <Content Include="Content\Metronic\metronic\assets\admin\layout\css\custom.css" />
     <Content Include="Content\Metronic\metronic\assets\admin\layout\css\layout.css" />
+    <Content Include="Content\Metronic\metronic\assets\admin\layout\css\themes\red.css" />
     <Content Include="Content\Metronic\metronic\assets\admin\layout\css\themes\blue.css" />
     <Content Include="Content\Metronic\metronic\assets\admin\layout\css\themes\darkblue.css" />
     <Content Include="Content\Metronic\metronic\assets\admin\layout\css\themes\default.css" />
@@ -3121,6 +3124,18 @@
     <Content Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\ProjectTasks.Business.Domain.Entities\ProjectTasks.Business.Domain.Entities.csproj">
+      <Project>{9431ed32-fc10-4d14-a3bd-2e323c48b33c}</Project>
+      <Name>ProjectTasks.Business.Domain.Entities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ProjectTasks.Business.Services.Interfaces\ProjectTasks.Business.Services.Interfaces.csproj">
+      <Project>{c5a222b9-a906-49cb-aa45-e4575746f08c}</Project>
+      <Name>ProjectTasks.Business.Services.Interfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ProjectTasks.Crosscuttings.IoC\ProjectTasks.Crosscuttings.IoC.csproj">
+      <Project>{2346d764-ae74-452c-aa22-2e0a0ef94e92}</Project>
+      <Name>ProjectTasks.Crosscuttings.IoC</Name>
+    </ProjectReference>
     <ProjectReference Include="..\ProjectTasks.Presentation.Core\ProjectTasks.Presentation.Core.csproj">
       <Project>{87124052-c9d6-4110-bceb-061e9b9c4853}</Project>
       <Name>ProjectTasks.Presentation.Core</Name>

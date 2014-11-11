@@ -62,7 +62,7 @@
                 "~/Content/Metronic/metronic/assets/global/css/components.css",
                 "~/Content/Metronic/metronic/assets/global/css/plugins.css",
                 "~/Content/Metronic/metronic/assets/admin/layout/css/layout.css",
-                "~/Content/Metronic/metronic/assets/admin/layout/css/themes/default.css"));
+                "~/Content/Metronic/metronic/assets/admin/layout/css/themes/red.css"));
 
             #endregion < Metronic template >
 
