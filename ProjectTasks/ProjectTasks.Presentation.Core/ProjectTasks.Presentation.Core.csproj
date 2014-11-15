@@ -110,6 +110,8 @@
     <Compile Include="Notification\NotificationHub.cs" />
     <Compile Include="Notification\NotificationManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Serialization\JsonNetActionFilter.cs" />
+    <Compile Include="Serialization\JsonNetResult.cs" />
     <Compile Include="Validation\Attributes\JsonExceptionFilterAttribute.cs" />
     <Compile Include="Validation\Extensions\ModelStateDictionaryExtension.cs" />
   </ItemGroup>

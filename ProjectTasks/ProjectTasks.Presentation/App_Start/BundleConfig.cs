@@ -31,6 +31,7 @@
                     "~/Content/Plugins/select2/select2.min.js",
                     "~/Content/Plugins/data-tables/jquery.dataTables.min.js",
                     "~/Content/Plugins/data-tables/dataTables.bootstrap.js",
+                    "~/Content/Plugins/bootstrap-wizard/jquery.bootstrap.wizard.min.js",
                     "~/Content/Plugins/bootstrap-toastr/toastr.min.js",
                     "~/Content/Plugins/jquery-treetable/jquery.treetable.js"
                 )
@@ -52,6 +53,8 @@
                     "~/Content/Plugins/uniform/css/uniform.default.css",
                     "~/Content/Plugins/bootstrap-select/css/bootstrap-select.min.css",
                     "~/Content/Plugins/select2/select2.css",
+                    "~/Content/Plugins/data-tables/DT_bootstrap.css",
+                    "~/Content/Plugins/bootstrap-toastr/toastr.min.css",
                     "~/Content/Plugins/jquery-treetable/css/jquery.treetable.css",
                     "~/Content/Plugins/jquery-treetable/css/jquery.treetable.theme.bootstrap.css"
                 )
@@ -104,8 +107,8 @@
             #region < M3gur0 >
 
             bundles.Add(new ScriptBundle("~/Content/meguro-js")
-                .Include("~/Content/meguro/plugins/jquery-treetable/jquery.treetable.js")
                 .IncludeDirectory("~/Content/meguro/scripts/prototypes", "*.js", false)
+                .IncludeDirectory("~/Content/meguro/scripts/modules", "*.js", false)
                 .Include("~/Content/meguro/scripts/app.js")
                 .IncludeDirectory("~/Content/meguro/scripts/directives", "*.js", false)
                 .IncludeDirectory("~/Content/meguro/scripts/controllers", "*.js", false)

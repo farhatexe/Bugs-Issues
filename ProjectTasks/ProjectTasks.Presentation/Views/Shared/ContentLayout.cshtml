@@ -1,14 +1,21 @@
-﻿
-<div class="page-head">
-    <div class="container">
+﻿<div class="page-head">
+    <div class="{{layoutMode}}">
         <!-- BEGIN PAGE TITLE -->
         <div class="page-title">
             <h1>@Html.MvcSiteMap().SiteMapPath("PageTitle")</h1>
         </div>
+        <div class="page-toolbar">
+            <!-- BEGIN THEME PANEL -->
+            <div class="btn-group btn-theme-panel">
+                <a ng-click="layoutSwitching()" class="btn switch-layout normal">
+                    <i class="icon-settings"></i>
+                </a>
+            </div>
+        </div>
     </div>
 </div>
 <div class="page-content">
-    <div class="container">
+    <div class="{{layoutMode}}">
         @RenderSection("styles", required: false)
         @Html.MvcSiteMap().SiteMapPath("BreadCrumb")
         @RenderBody()

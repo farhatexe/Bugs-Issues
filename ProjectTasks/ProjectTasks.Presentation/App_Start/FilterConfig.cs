@@ -1,5 +1,6 @@
 ﻿namespace ProjectTasks.Presentation
 {
+    using ProjectTasks.Presentation.Core.Serialization;
     using ProjectTasks.Presentation.Core.Validation.Attributes;
     using System.Web.Mvc;
 
@@ -16,6 +17,7 @@
         {
             filters.Add(new JsonExceptionFilterAttribute());
             filters.Add(new HandleErrorAttribute());
+            filters.Add(new JsonNetActionFilter());
         }
     }
 }

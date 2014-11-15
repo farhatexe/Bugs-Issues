@@ -3,7 +3,7 @@
 @{    
     var wizardPortlet = new Portlet(Model.Id);
     wizardPortlet.Color = Model.Color;
-    wizardPortlet.CssClass = "box";
+    wizardPortlet.CssClass = "light";
     
     wizardPortlet.Caption = @<text>
         @(Model.Caption == null ? string.Empty : Model.Caption(Html) + " - ")<span class="step-title">@string.Format(Resources.Global.Wizard_StepTitle, 1, @Model.Steps.Count)</span>
@@ -19,6 +19,7 @@
             <a href="javascript:;" class="btn btn-default btn-sm button-submit" style="display:none;" title="@Resources.Global.Submit">
                 <i class="fa @FontAwesome.Send"></i>
             </a>
+            <a class="btn btn-circle btn-icon-only btn-default fullscreen" ng-href="" data-original-title="" title=""></a>
     </text>;
     
     wizardPortlet.Content = @<text>

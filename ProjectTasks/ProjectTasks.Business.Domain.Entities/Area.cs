@@ -6,6 +6,7 @@
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Threading;
     using System.Linq;
+    using Newtonsoft.Json;
 
     /// <summary>
     /// Represents an area to split the project in few functional / technical parts.
@@ -80,7 +81,7 @@
         /// <value>
         /// The parent.
         /// </value>
-        [ForeignKey("ParentId")]
+        [ForeignKey("ParentId"), JsonIgnore]
         public Area Parent { get; set; }
 
         /// <summary>
@@ -89,6 +90,7 @@
         /// <value>
         /// The children.
         /// </value>
+        [JsonIgnore]
         public ICollection<Area> Children { get; set; }
 
         /// <summary>

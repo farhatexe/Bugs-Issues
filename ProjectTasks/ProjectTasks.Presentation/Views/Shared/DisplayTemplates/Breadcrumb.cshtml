@@ -8,7 +8,7 @@
         @foreach (var item in Model.Nodes)
         {
             <li class="start @(item.IsCurrentNode ? "active" : "")">
-                <a href="#@(item.IsClickable ? item.Url : "javascript:;")" @(String.Join(" ", item.Attributes.Where(x => x.Key.StartsWith("data-", StringComparison.OrdinalIgnoreCase)).Select(x => String.Format("{0}=\"{1}\"", x.Key, x.Value))))>
+                <a href="" ng-href="@(item.IsClickable ? "#" + item.Url : "")" @(String.Join(" ", item.Attributes.Where(x => x.Key.StartsWith("data-", StringComparison.OrdinalIgnoreCase)).Select(x => String.Format("{0}=\"{1}\"", x.Key, x.Value))))>
                     <span class="title">@item.Title</span>
                     @if (item.IsCurrentNode)
                     {

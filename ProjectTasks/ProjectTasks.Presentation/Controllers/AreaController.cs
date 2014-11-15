@@ -26,12 +26,14 @@
             return View();
         }
 
+        /// <summary>
+        /// Returns all areas in a Json object list.
+        /// </summary>
+        /// <returns>Json result that contains all areas.</returns>
         public JsonResult GetAll()
         {
-            var flattenAreas = new List<Area>();
-            this.areaServices.GetAllAreas().Where(a => a.ParentId == null).ToList().Flatten(a => a.SortedChildren, ref flattenAreas);
-
-            return Json(flattenAreas.Select(a => new { Id = a.Id, ParentId = a.ParentId, Label = a.Label }), JsonRequestBehavior.AllowGet);
+            var result = this.areaServices.GetAllAreas().Where(a => a.ParentId == null).ToList();
+            return Json(result, JsonRequestBehavior.AllowGet);
         }
 
         /// <summary>

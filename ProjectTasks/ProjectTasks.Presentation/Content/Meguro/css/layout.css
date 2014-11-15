@@ -2,11 +2,22 @@
     margin: 0;
 }
 
-.form-wizard ul.nav a{
+.form-wizard ul.nav a {
     color: #555;
-    pointer-events:none;
+    pointer-events: none;
 }
 
 .modal.fullscreen .modal-dialog {
     width: 95%;
+}
+
+.modal {
+    z-index: 10060 !important;
+}
+
+.switch-layout.normal > .icon-settings:before {
+    content: "\e057";
+}
+.switch-layout.fluid > .icon-settings:before {
+    content: "\e058";
 }

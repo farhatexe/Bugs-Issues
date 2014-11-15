@@ -6,19 +6,22 @@
         });
     });
 
-    app.controller('areaController', ['$scope', '$http', 'toastr', 'DTOptionsBuilder', 'DTColumnBuilder', '$modal', function ($scope, $http, toastr, DTOptionsBuilder, DTColumnBuilder, $modal) {
+    app.controller('areaController', ['$scope', '$http', 'toastr', 'ngTreetableParams', '$q', '$modal', function ($scope, $http, toastr, ngTreetableParams, $q, $modal) {
 
-        $scope.ttOptions = {
-            expandable: true,
-            column: 2
-        };
+        $scope.areaParams = new ngTreetableParams({
+            getNodes: function () {
+                var deferred = $q.defer();
+                $http.get("/area/GetAll").success(function (data) {
+                    deferred.resolve(data);
+                });
+                return deferred.promise;
+            },
+            options: {
+                column: 2,
+                expandable: true
 
-        $http
-            .get("/area/GetAll")
-            .success(function (data) {
-                $scope.data = data;
-                $scope.$broadcast('dataloaded');
-            });
+            }
+        });
 
         $scope.openArea = function (id) {
             $modal.open({
@@ -41,7 +44,7 @@
                             console.log('area [' + id + '] has been deleted');
                             break;
                         case 'saved':
-                            $scope.reloadData();
+                            $scope.areaParams.refresh();
                             toastr.show(toastr.type.success, 'area has been updated', 'Operation successful')
                             console.log('area [' + id + '] has been saved');
                             break;
@@ -58,7 +61,7 @@
                 switch (state) {
                     case 'created':
                         toastr.show(toastr.type.success, 'area has been created', 'Operation successful')
-                        $scope.reloadData();
+                        $scope.areaParams.refresh();
                         break;
                 }
             });
@@ -75,7 +78,7 @@
                             .delete('/api/area/' + id)
                             .success(function (data, statusCode, statusText) {
                                 toastr.show(toastr.type.success, 'area has been deleted', 'Operation successful')
-                                $scope.reloadData();
+                                $scope.areaParams.refresh();
                             }); break;
                 }
             });

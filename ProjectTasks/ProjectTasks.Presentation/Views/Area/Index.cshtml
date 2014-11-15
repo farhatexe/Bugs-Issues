@@ -2,28 +2,19 @@
 
 <div class="row">
     <div class="@BootstrapColumns.Medium.Col12 @BootstrapColumns.Small.Col12">
-        <div class="portlet light" style="min-height: 500px">
+        <div class="portlet light">
             <div class="portlet-title">
                 <div class="caption">
                     <i class="fa fa-cogs font-green-sharp"></i>
                     <span class="caption-subject font-green-sharp bold uppercase">Area management</span>
                 </div>
                 <div class="actions">
-                    <a class="btn btn-circle btn-icon-only btn-default" href="javascript:;">
-                        <i class="icon-cloud-upload"></i>
-                    </a>
-                    <a class="btn btn-circle btn-icon-only btn-default" href="javascript:;">
-                        <i class="icon-wrench"></i>
-                    </a>
-                    <a class="btn btn-circle btn-icon-only btn-default fullscreen" href="#" data-original-title="" title="">
-                    </a>
-                    <a class="btn btn-circle btn-icon-only btn-default" href="javascript:;">
-                        <i class="icon-trash"></i>
+                    <a class="btn btn-circle btn-icon-only btn-default fullscreen" ng-href="" data-original-title="" title="">
                     </a>
                 </div>
             </div>
             <div class="portlet-body">
-                <table id="areaTreeTable" data-tt="" class="table table-bordered table-striped table-condensed flip-content">
+                <table data-tt="" data-tt-table="" data-tt-params="areaParams" data-tt-id-selector="Id" data-tt-children-selector="SortedChildren" class="table table-bordered table-striped table-condensed flip-content" data-tt-rowtemplate="areaRowTemplate">
                     <thead>
                         <tr>
                             <th style="width: 13px"></th>
@@ -31,13 +22,7 @@
                             <th>Label</th>
                         </tr>
                     </thead>
-                    <tbody>
-                        <tr data-ng-repeat="item in data" data-tt-id="{{item.Id}}" data-tt-parent-id="{{item.ParentId}}">
-                            <td><a data-ng-click="openArea(item.Id)" title="@Resources.Global.View"><i class="fa @FontAwesome.Search"></i></a></td>
-                            <td><a data-ng-click="deleteArea(item.Id)" title="@Resources.Global.View"><i class="fa @FontAwesome.Trash"></i></a></td>
-                            <td>{{item.Label}}</td>
-                        </tr>
-                    </tbody>
+                    <tbody></tbody>
                     <tfoot>
                         <tr>
                             <td colspan="3">
@@ -50,3 +35,12 @@
         </div>
     </div>
 </div>
+
+
+<script type="text/ng-template" id="areaRowTemplate">
+    <tr data-tt-node="">
+        <td><a data-ng-click="openArea(node.Id)" title="@Resources.Global.View"><i class="fa @FontAwesome.Search"></i></a></td>
+        <td><a data-ng-click="deleteArea(node.Id)" title="@Resources.Global.View"><i class="fa @FontAwesome.Trash"></i></a></td>
+        <td>{{node.Label}}</td>
+    </tr>
+</script>
