@@ -1,0 +1,7 @@
+﻿@model SiteMapPathHelperModel
+@{
+    var currentNode = @Model.Nodes.FirstOrDefault(x => x.IsCurrentNode);
+}
+@if (currentNode != null) {
+    @((String.IsNullOrEmpty(currentNode.Description) ? currentNode.Title : currentNode.Description))
+}

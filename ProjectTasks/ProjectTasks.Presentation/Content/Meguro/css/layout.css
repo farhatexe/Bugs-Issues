@@ -1,11 +1,12 @@
-/* Metronic custom */
-body div.page-header.navbar.navbar-fixed-top {
-    z-index: 1049 !important;
+.page-header .page-header-top .page-logo .logo-default {
+    margin: 0;
 }
+
 .form-wizard ul.nav a{
     color: #555;
     pointer-events:none;
 }
+
 .modal.fullscreen .modal-dialog {
     width: 95%;
 }

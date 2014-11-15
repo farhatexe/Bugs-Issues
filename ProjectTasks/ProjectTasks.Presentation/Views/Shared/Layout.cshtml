@@ -4,41 +4,31 @@
 <!--[if !IE]><!-->
 <html lang="en" class="no-js" data-ng-app="webApp">
 <!--<![endif]-->
-
 @Html.Partial("Head")
 
 <body class="page-header-fixed page-sidebar-closed-hide-logo">
 
     @Html.Partial("Header")
 
-    <div class="clearfix"></div>
-
-    <div class="page-container">
-        @Html.MvcSiteMap().Menu("Navbar")
-
-        <div class="page-content-wrapper">
-            <div class="page-content">
-                <div data-ng-view="">
-                    @RenderBody()
-                </div>
-            </div>
-        </div>
+    <div class="page-container" data-ng-view="">
+        @RenderBody()
     </div>
 
     @Html.Partial("Footer")
 
     <!--[if lt IE 9]>
-        @Scripts.Render("~/content/metronic-theme-ltie9-js")
+    @Scripts.Render("~/content/plugins-ltie9-js")
     <![endif]-->
+    @Scripts.Render("~/content/plugins-js")
+    @Scripts.Render("~/content/metronic-js")
 
-    @Scripts.Render("~/content/metronic-theme-js")
     @Scripts.Render("~/content/angular-js")
-
     @{
         var twoLettersISOLanguageCode = System.Threading.Thread.CurrentThread.CurrentUICulture.TwoLetterISOLanguageName;
     }
     @Scripts.Render("~/Content/Angular/i18n/angular-locale_" + twoLettersISOLanguageCode + ".js")
     @Scripts.Render("~/content/signalr-js")
+    <script src="~/signalr/hubs"></script>
     <script src="~/signalr/hubs"></script>
     @Scripts.Render("~/content/meguro-js")
 </body>

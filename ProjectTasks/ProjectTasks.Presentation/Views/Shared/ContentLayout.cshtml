@@ -1,4 +1,17 @@
-﻿@RenderSection("styles", required: false)
-@Html.MvcSiteMap().SiteMapPath("BreadCrumb")
-@RenderBody()
-@RenderSection("scripts", required: false)
+﻿
+<div class="page-head">
+    <div class="container">
+        <!-- BEGIN PAGE TITLE -->
+        <div class="page-title">
+            <h1>@Html.MvcSiteMap().SiteMapPath("PageTitle")</h1>
+        </div>
+    </div>
+</div>
+<div class="page-content">
+    <div class="container">
+        @RenderSection("styles", required: false)
+        @Html.MvcSiteMap().SiteMapPath("BreadCrumb")
+        @RenderBody()
+        @RenderSection("scripts", required: false)
+    </div>
+</div>

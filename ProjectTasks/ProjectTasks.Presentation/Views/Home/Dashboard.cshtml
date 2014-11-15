@@ -1,10 +1,9 @@
 ﻿<div class="row">
-    <div class="@BootstrapColumns.Medium.Col9 @BootstrapColumns.Small.Col8">
+    <div class="@BootstrapColumns.Medium.Col12 @BootstrapColumns.Small.Col8">
         @{
             var portlet = new Portlet("welcome");
             portlet.Scrollable = true;
-            portlet.Color = BootstrapColors.Purple.Purple_Seance;
-            portlet.CssClass = "box";
+            portlet.CssClass = "light";
             
             portlet.Caption = @<text>
                 @Html.IconifyMe(FontAwesome.Angellist)

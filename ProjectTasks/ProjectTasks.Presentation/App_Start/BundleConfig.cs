@@ -14,57 +14,50 @@
         /// <param name="bundles">The bundles.</param>
         public static void RegisterBundles(BundleCollection bundles)
         {
-            #region < Metronic template >
+            #region < Plugins >
 
-            bundles.Add(new ScriptBundle("~/content/metronic-theme-js")
+            bundles.Add(new ScriptBundle("~/content/plugins-js")
                 .Include(
-                    "~/Content/Metronic/metronic/assets/global/plugins/jquery-1.11.0.min.js",
-                    "~/Content/Metronic/metronic/assets/global/plugins/jquery-migrate-1.2.1.min.js",
-                    "~/Content/Metronic/metronic/assets/global/plugins/jquery-ui/jquery-ui-1.10.3.custom.min.js",
-                    "~/Content/Metronic/metronic/assets/global/plugins/bootstrap/js/bootstrap.min.js",
-                    "~/Content/Metronic/metronic/assets/global/plugins/bootstrap-hover-dropdown/bootstrap-hover-dropdown.min.js",
-                    "~/Content/Metronic/metronic/assets/global/plugins/jquery-slimscroll/jquery.slimscroll.js",
-                    "~/Content/Metronic/metronic/assets/global/plugins/jquery.blockui.min.js",
-                    "~/Content/Metronic/metronic/assets/global/plugins/jquery.cokie.min.js",
-                    "~/Content/Metronic/metronic/assets/global/plugins/uniform/jquery.uniform.min.js",
-                    "~/Content/Metronic/metronic/assets/global/plugins/select2/select2.min.js",
-                    "~/Content/Metronic/metronic/assets/global/plugins/data-tables/jquery.dataTables.min.js",
-                    "~/Content/Metronic/metronic/assets/global/plugins/data-tables/dataTables.bootstrap.js",
-                    "~/Content/Metronic/metronic/assets/global/plugins/bootstrap-wizard/jquery.bootstrap.wizard.min.js",
-                    "~/Content/Metronic/metronic/assets/global/plugins/bootstrap-toastr/toastr.min.js",
-                    "~/Content/Metronic/metronic/assets/global/plugins/bootstrap-modal/js/bootstrap-modal.js",
-                    "~/Content/Metronic/metronic/assets/global/plugins/bootstrap-modal/js/bootstrap-modalmanager.js",
-                    "~/Content/Metronic/metronic/assets/global/plugins/jquery-validation/js/jquery.validate.min.js",
-                    "~/Content/Metronic/metronic/assets/global/plugins//moment-with-locales.min.js",
-                    "~/Content/Metronic/metronic/assets/global/scripts/datatable.js",
-                    "~/Content/Metronic/metronic/assets/global/scripts/metronic.js",
-                    "~/Content/Metronic/metronic/assets/admin/layout/scripts/layout.js"));
+                    "~/Content/Plugins/jquery-1.11.1.min.js",
+                    "~/Content/Plugins/jquery-migrate-1.2.1.min.js",
+                    "~/Content/Plugins/jquery-ui/jquery-ui.min.js",
+                    "~/Content/Plugins/bootstrap/js/bootstrap.min.js",
+                    "~/Content/Plugins/bootstrap-hover-dropdown/bootstrap-hover-dropdown.min.js",
+                    "~/Content/Plugins/jquery-slimscroll/jquery.slimscroll.min.js",
+                    "~/Content/Plugins/jquery.blockUI.min.js",
+                    "~/Content/Plugins/jquery.cookie.js",
+                    "~/Content/Plugins/uniform/jquery.uniform.min.js",
+                    "~/Content/Plugins/moment-with-locales.min.js",
+                    "~/Content/Plugins/select2/select2.min.js",
+                    "~/Content/Plugins/data-tables/jquery.dataTables.min.js",
+                    "~/Content/Plugins/data-tables/dataTables.bootstrap.js",
+                    "~/Content/Plugins/bootstrap-toastr/toastr.min.js",
+                    "~/Content/Plugins/jquery-treetable/jquery.treetable.js"
+                )
+            );
 
-            bundles.Add(new ScriptBundle("~/content/metronic-theme-ltie9-js").Include(
-                "~/Content/Metronic/metronic/assets/global/plugins/respond.min.js",
-                "~/Content/Metronic/metronic/assets/global/plugins/excanvas.min.js"
-            ));
+            bundles.Add(new ScriptBundle("~/content/plugins-ltie9-js")
+                .Include(
+                    "~/Content/Plugins/respond.min.js",
+                    "~/Content/Plugins/excanvas.min.js"
+                )
+            );
 
-            bundles.Add(new StyleImagePathBundle("~/content/metronic-theme-css").Include(
-                "~/Content/Metronic/metronic/assets/global/plugins/font-awesome/css/font-awesome.min.css",
-                "~/Content/Metronic/metronic/assets/global/plugins/simple-line-icons/simple-line-icons.min.css",
-                "~/Content/Metronic/metronic/assets/global/plugins/bootstrap/css/bootstrap.min.css",
-                "~/Content/Metronic/metronic/assets/global/plugins/uniform/css/uniform.default.css",
-                "~/Content/Metronic/metronic/assets/global/plugins/bootstrap-daterangepicker/daterangepicker-bs3.css",
-                "~/Content/Metronic/metronic/assets/global/plugins/fullcalendar/fullcalendar/fullcalendar.css",
-                "~/Content/Metronic/metronic/assets/global/plugins/jqvmap/jqvmap/jqvmap.css",
-                "~/Content/Metronic/metronic/assets/global/plugins/data-tables/DT_bootstrap.css",
-                "~/Content/Metronic/metronic/assets/global/plugins/dropzone/css/dropzone.css",
-                "~/Content/Metronic/metronic/assets/global/plugins/bootstrap-toastr/toastr.min.css",
-                "~/Content/Metronic/metronic/assets/global/plugins/bootstrap-select/bootstrap-select.min.css",
-                "~/Content/Metronic/metronic/assets/global/plugins/select2/select2.css",
-                "~/Content/Metronic/metronic/assets/global/plugins/jquery-multi-select/css/multi-select.css",
-                "~/Content/Metronic/metronic/assets/global/css/components.css",
-                "~/Content/Metronic/metronic/assets/global/css/plugins.css",
-                "~/Content/Metronic/metronic/assets/admin/layout/css/layout.css",
-                "~/Content/Metronic/metronic/assets/admin/layout/css/themes/red.css"));
+            bundles.Add(new StyleBundle("~/content/plugins-css")
+                .Include(
+                    "~/Content/Plugins/fonts/fonts.css",
+                    "~/Content/Plugins/font-awesome/css/font-awesome.min.css",
+                    "~/Content/Plugins/simple-line-icons/simple-line-icons.min.css",
+                    "~/Content/Plugins/bootstrap/css/bootstrap.min.css",
+                    "~/Content/Plugins/uniform/css/uniform.default.css",
+                    "~/Content/Plugins/bootstrap-select/css/bootstrap-select.min.css",
+                    "~/Content/Plugins/select2/select2.css",
+                    "~/Content/Plugins/jquery-treetable/css/jquery.treetable.css",
+                    "~/Content/Plugins/jquery-treetable/css/jquery.treetable.theme.bootstrap.css"
+                )
+            );
 
-            #endregion < Metronic template >
+            #endregion < Plugins >
 
             #region < Angular >
 
@@ -78,6 +71,28 @@
                     "~/Content/Angular/angular-datatables.min.js"));
 
             #endregion < Angular >
+
+            #region < Metronic >
+
+            bundles.Add(new ScriptBundle("~/content/metronic-js")
+                .Include(
+                    "~/Content/Metronic/scripts/metronic.js",
+                    "~/Content/Metronic/scripts/layout.js",
+                    "~/Content/Metronic/scripts/datatable.js"
+                )
+            );
+
+            bundles.Add(new StyleBundle("~/content/metronic-css")
+                .Include(
+                    "~/Content/Metronic/css/components.css",
+                    "~/Content/Metronic/css/plugins.css",
+                    "~/Content/Metronic/css/layout.css",
+                    "~/Content/Metronic/css/themes/default.css",
+                    "~/Content/Metronic/css/themes/red-limagrain.css"
+                )
+            );
+
+            #endregion < Metronic >
 
             #region < SignalR >
 
@@ -97,9 +112,7 @@
                 .IncludeDirectory("~/Content/meguro/scripts/plugins", "*.js", false)
                 .IncludeDirectory("~/Content/meguro/scripts/services", "*.js", false));
 
-            bundles.Add(new StyleBundle("~/Content/meguro-css")
-                .IncludeDirectory("~/Content/meguro/plugins/jquery-treetable/css", "*.css", false)
-                .IncludeDirectory("~/Content/meguro/css", "*.css", false));
+            bundles.Add(new StyleBundle("~/Content/meguro-css").IncludeDirectory("~/Content/meguro/css", "*.css", false));
 
             #endregion < M3gur0 >
         }

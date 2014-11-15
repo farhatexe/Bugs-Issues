@@ -26,15 +26,6 @@
             return View();
         }
 
-        /// <summary>
-        /// Return TreeTable view for area feature.
-        /// </summary>
-        /// <returns></returns>
-        public ActionResult TreeTable()
-        {
-            return View();
-        }
-
         public JsonResult GetAll()
         {
             var flattenAreas = new List<Area>();

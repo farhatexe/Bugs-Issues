@@ -4,25 +4,23 @@
 
 @if (Model.IsClickable || Model.Children.Any())
 {
+    var hasChildren = Model.Children != null && Model.Children.Any();
     var itemClass = Model.IsCurrentNode ? "active" : "";
-    var itemUrl = Model.IsClickable ? Model.Url : "javascript:;";
+    var itemUrl = Model.IsClickable ? "#" + Model.Url : "javascript:;";
+    itemClass = itemClass + (hasChildren ? " menu-dropdown classic-menu-dropdown" : "");
     
     <li class="@itemClass">
-        <a href="#@itemUrl">
-            @if (Model.Attributes.Any(x => x.Key == "icon"))
-            {
-                <i class="fa @String.Join(" ", Model.Attributes.Where(x => x.Key == "icon").Select(x=> x.Value))"></i>
-            }
-            <span class="title">@Model.Title</span>
-            <span class="selected"></span>
-            @if (Model.Children != null && Model.Children.Any()) 
-            {
-                <span class="arrow @(Model.IsCurrentNode ? "open" : "")"></span>
-            }
-        </a>
+        @if (hasChildren) { 
+            <a data-hover="megamenu-dropdown" data-close-others="true" data-toggle="dropdown" href="@itemUrl">
+                @Model.Title
+            </a>
+        } else {
+            <a href="@itemUrl">@Model.Title</a>
+        }
         @if (Model.Children != null && Model.Children.Any())
         {
-            <ul class="sub-menu">
+            <ul class="dropdown-menu pull-left">
+
                 @foreach (var node in Model.Children)
                 {
                     @Html.DisplayFor(m => node)
