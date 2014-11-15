@@ -37,6 +37,18 @@
         }
 
         /// <summary>
+        /// return a hierarchical json object that represents area hierarchy.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        public JsonResult GetAllReferential(string id)
+        {
+            var result = this.areaServices.GetAllAreas().ToJsTree(id, "Id", "Label", "ParentId");
+
+            return Json(result, JsonRequestBehavior.AllowGet);
+        }
+
+        /// <summary>
         /// Gets all available areas.
         /// </summary>
         /// <param name="request">The request.</param>
@@ -45,6 +57,15 @@
         public DataTablesResult<Area> GetAll(DefaultDataTablesRequest request)
         {
             return new DataTablesResult<Area>(this.areaServices.GetAllAreas().AsQueryable().ToDataTablesSortedResponse(request), request, JsonRequestBehavior.DenyGet);
+        }
+
+        /// <summary>
+        /// Return area tree view.
+        /// </summary>
+        /// <returns></returns>
+        public ActionResult AreaTree()
+        {
+            return this.View();
         }
 
         /// <summary>

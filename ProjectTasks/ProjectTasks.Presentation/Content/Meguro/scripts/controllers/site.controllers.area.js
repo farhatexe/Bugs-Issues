@@ -99,8 +99,21 @@
         };
     }]);
 
-    app.controller('areaCreateController', ['$scope', '$http', '$modalInstance', function ($scope, $http, $modalInstance) {
-        $scope.data = { Id: 0, StateLabel: 'unused' };
+    app.controller('areaCreateController', ['$scope', '$http', '$modal', '$modalInstance', function ($scope, $http, $modal, $modalInstance) {
+        $scope.data = { ParentId: null };
+
+        $scope.openAreaTree = function () {
+            $modal.open({
+                templateUrl: '/area/AreaTree',
+                controller: 'areaTreeController',
+                resolve: {
+                    id: function () { return $scope.data.ParentId; }
+                }
+            }).result.then(function (result) {
+                $scope.data.ParentId = result.id;
+                $scope.data.ParentLabel = result.text;
+            });
+        };
 
         $scope.add = function () {
             $http
@@ -119,7 +132,7 @@
         };
     }]);
 
-    app.controller('areaEditController', ['$scope', '$modalInstance', '$http', 'id', function ($scope, $modalInstance, $http, id) {
+    app.controller('areaEditController', ['$scope', '$modal', '$modalInstance', '$http', 'id', function ($scope, $modal, $modalInstance, $http, id) {
         $http
             .get('/api/area/' + id)
             .success(function (data) {
@@ -142,6 +155,33 @@
             $modalInstance.dismiss('cancel');
         };
 
+        $scope.close = function () {
+            $modalInstance.dismiss('close');
+        };
+
+        $scope.openAreaTree = function () {
+            $modal.open({
+                templateUrl: '/area/AreaTree',
+                controller: 'areaTreeController',
+                resolve: {
+                    id: function () { return $scope.data.ParentId; }
+                }
+            }).result.then(function (result) {
+                $scope.data.ParentId = result.id;
+                $scope.data.ParentLabel = result.text;
+            });
+        };
+    }]);
+
+    app.controller('areaTreeController', ['$scope', '$modalInstance', 'id', function ($scope, $modalInstance, id) {
+        $scope.id = id;
+        $scope.select = function (event, area) {
+            if (area.node)
+                $modalInstance.close(area.node);
+        };
+        $scope.cancel = function () {
+            $modalInstance.dismiss('cancel');
+        };
         $scope.close = function () {
             $modalInstance.dismiss('close');
         };

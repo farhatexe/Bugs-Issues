@@ -107,6 +107,7 @@
     <Compile Include="Bootstrap\Extensions\DataTablesColumnExtenders.cs" />
     <Compile Include="Bootstrap\Extensions\DataTablesSortedResponseExtenders.cs" />
     <Compile Include="Bootstrap\Extensions\HtmlExtension.cs" />
+    <Compile Include="Bootstrap\Extensions\JsTreeExtension.cs" />
     <Compile Include="Notification\NotificationHub.cs" />
     <Compile Include="Notification\NotificationManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

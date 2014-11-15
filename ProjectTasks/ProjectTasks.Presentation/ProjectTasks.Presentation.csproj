@@ -243,6 +243,7 @@
     <Content Include="Content\Meguro\images\favicon.png" />
     <Content Include="Content\Meguro\images\logo.png" />
     <Content Include="Content\Meguro\scripts\controllers\site.controllers.layout.js" />
+    <Content Include="Content\Meguro\scripts\directives\site.directives.jstree.js" />
     <Content Include="Content\Meguro\scripts\modules\site.modules.treetable.js" />
     <Content Include="Content\Plugins\bootstrap-toastr\toastr-icon.png" />
     <Content Include="Content\Plugins\bootstrap-toastr\toastr.css" />
@@ -430,6 +431,18 @@
     <Content Include="Content\Plugins\jquery-ui\jquery-ui.min.js" />
     <Content Include="Content\Plugins\jquery.blockUI.min.js" />
     <Content Include="Content\Plugins\jquery.cookie.js" />
+    <Content Include="Content\Plugins\jstree\jstree.js" />
+    <Content Include="Content\Plugins\jstree\jstree.min.js" />
+    <Content Include="Content\Plugins\jstree\themes\default-dark\32px.png" />
+    <Content Include="Content\Plugins\jstree\themes\default-dark\40px.png" />
+    <Content Include="Content\Plugins\jstree\themes\default-dark\style.css" />
+    <Content Include="Content\Plugins\jstree\themes\default-dark\style.min.css" />
+    <Content Include="Content\Plugins\jstree\themes\default-dark\throbber.gif" />
+    <Content Include="Content\Plugins\jstree\themes\default\32px.png" />
+    <Content Include="Content\Plugins\jstree\themes\default\40px.png" />
+    <Content Include="Content\Plugins\jstree\themes\default\style.css" />
+    <Content Include="Content\Plugins\jstree\themes\default\style.min.css" />
+    <Content Include="Content\Plugins\jstree\themes\default\throbber.gif" />
     <Content Include="Content\Plugins\moment-with-locales.min.js" />
     <Content Include="Content\Plugins\respond.min.js" />
     <Content Include="Content\Plugins\select2\select2-bootstrap.css" />
@@ -679,7 +692,7 @@
     <Content Include="Views\Area\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\Area\TreeTable.cshtml" />
+    <Content Include="Views\Area\AreaTree.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\Plugins\bootstrap-select\css\bootstrap-select.css.map" />

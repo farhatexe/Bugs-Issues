@@ -33,7 +33,8 @@
                     "~/Content/Plugins/data-tables/dataTables.bootstrap.js",
                     "~/Content/Plugins/bootstrap-wizard/jquery.bootstrap.wizard.min.js",
                     "~/Content/Plugins/bootstrap-toastr/toastr.min.js",
-                    "~/Content/Plugins/jquery-treetable/jquery.treetable.js"
+                    "~/Content/Plugins/jquery-treetable/jquery.treetable.js",
+                    "~/Content/Plugins/jstree/jstree.min.js"
                 )
             );
 
@@ -44,7 +45,7 @@
                 )
             );
 
-            bundles.Add(new StyleBundle("~/content/plugins-css")
+            bundles.Add(new StyleImagePathBundle("~/content/plugins-css")
                 .Include(
                     "~/Content/Plugins/fonts/fonts.css",
                     "~/Content/Plugins/font-awesome/css/font-awesome.min.css",
@@ -56,7 +57,8 @@
                     "~/Content/Plugins/data-tables/DT_bootstrap.css",
                     "~/Content/Plugins/bootstrap-toastr/toastr.min.css",
                     "~/Content/Plugins/jquery-treetable/css/jquery.treetable.css",
-                    "~/Content/Plugins/jquery-treetable/css/jquery.treetable.theme.bootstrap.css"
+                    "~/Content/Plugins/jquery-treetable/css/jquery.treetable.theme.bootstrap.css",
+                    "~/Content/Plugins/jstree/themes/default/style.min.css"
                 )
             );
 
@@ -85,7 +87,7 @@
                 )
             );
 
-            bundles.Add(new StyleBundle("~/content/metronic-css")
+            bundles.Add(new StyleImagePathBundle("~/content/metronic-css")
                 .Include(
                     "~/Content/Metronic/css/components.css",
                     "~/Content/Metronic/css/plugins.css",
@@ -115,7 +117,7 @@
                 .IncludeDirectory("~/Content/meguro/scripts/plugins", "*.js", false)
                 .IncludeDirectory("~/Content/meguro/scripts/services", "*.js", false));
 
-            bundles.Add(new StyleBundle("~/Content/meguro-css").IncludeDirectory("~/Content/meguro/css", "*.css", false));
+            bundles.Add(new StyleImagePathBundle("~/Content/meguro-css").IncludeDirectory("~/Content/meguro/css", "*.css", false));
 
             #endregion < M3gur0 >
         }

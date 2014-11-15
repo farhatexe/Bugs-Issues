@@ -47,7 +47,7 @@
         /// <returns>The area that matches the given identifier.</returns>
         public Area GetArea(int id)
         {
-            return this.areaRepository.Single(a => a.Id == id);
+            return this.areaRepository.Single(a => a.Id == id, a => a.Parent);
         }
 
         /// <summary>

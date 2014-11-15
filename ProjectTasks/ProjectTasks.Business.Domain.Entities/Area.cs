@@ -106,6 +106,18 @@
             }
         }
 
+        /// <summary>
+        /// Gets the parent label.
+        /// </summary>
+        [NotMapped]
+        public string ParentLabel
+        {
+            get
+            {
+                return this.Parent != null ? this.Parent.Label : string.Empty;
+            }
+        }
+
         #endregion < Properties >
 
         #region < Constructors >

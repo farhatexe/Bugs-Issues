@@ -14,6 +14,18 @@
                     </div>
                 </div>
             </div>
+            <div class="form-group">
+                <div class="control-label @BootstrapColumns.Medium.Col4">
+                    @Html.DisplayNameFor(c => c.Parent)
+                    <span class="required" aria-required="true">*</span>
+                </div>
+                <div class="@BootstrapColumns.Medium.Col8">
+                    <div class="input-icon right">
+                        @Html.EditorFor(c => c.ParentLabel, new { htmlAttributes = new { @class = "form-control", @data_ng_model = "data.ParentLabel", @data_ng_focus="openAreaTree()" } })
+                        @Html.HiddenFor(c => c.ParentId, new { htmlAttributes = new { @data_ng_model = "data.ParentId" } })
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>
