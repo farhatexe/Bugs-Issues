@@ -5,16 +5,27 @@
 @if (Model.IsClickable || Model.Children.Any())
 {
     var hasChildren = Model.Children != null && Model.Children.Any();
-    var itemClass = Model.IsCurrentNode ? "active" : "";
+    var itemLiClass = Model.IsCurrentNode ? "active" : "";
     var itemUrl = Model.IsClickable ? "#" + Model.Url : "javascript:;";
-    itemClass = itemClass + (hasChildren ? " menu-dropdown classic-menu-dropdown" : "");
-    
-    <li class="@itemClass">
-        @if (hasChildren) { 
+
+    if (Model.Ancestors.Any() && Model.Ancestors.Any(a => a.Ancestors.Any()) && hasChildren)
+    {
+        itemLiClass = itemLiClass + "  dropdown-submenu";
+    }
+    else if (hasChildren)
+    {
+        itemLiClass = itemLiClass + " menu-dropdown classic-menu-dropdown";
+    }
+
+    <li class="@itemLiClass">
+        @if (Model.Ancestors.Any() && !Model.Ancestors.Any(a => a.Ancestors.Any()))
+        {
             <a data-hover="megamenu-dropdown" data-close-others="true" data-toggle="dropdown" href="@itemUrl">
                 @Model.Title
             </a>
-        } else {
+        }
+        else
+        {
             <a href="@itemUrl">@Model.Title</a>
         }
         @if (Model.Children != null && Model.Children.Any())

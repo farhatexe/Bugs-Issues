@@ -100,7 +100,8 @@
         {
             get
             {
-                if (this.Children == null) return this.Children;
+                if (this.Children == null) 
+                    return Enumerable.Empty<Area>();
                 
                 return this.Children.OrderBy(c => c.Label);
             }
