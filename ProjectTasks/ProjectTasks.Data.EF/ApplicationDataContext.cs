@@ -54,7 +54,7 @@
         /// <value>
         /// The items.
         /// </value>
-        public DbSet<Item> Items { get; set; }
+        public DbSet<Backlog> Items { get; set; }
 
         /// <summary>
         /// Gets or sets the item tags.
@@ -62,7 +62,7 @@
         /// <value>
         /// The item tags.
         /// </value>
-        public DbSet<ItemTag> ItemTags { get; set; }
+        public DbSet<BacklogTag> ItemTags { get; set; }
 
         /// <summary>
         /// Gets or sets the reasons.
@@ -86,7 +86,7 @@
         /// <value>
         /// The runs.
         /// </value>
-        public DbSet<Run> Runs { get; set; }
+        public DbSet<Sprint> Runs { get; set; }
 
         /// <summary>
         /// Gets or sets the status.
@@ -119,14 +119,6 @@
         /// The users.
         /// </value>
         public DbSet<User> Users { get; set; }
-
-        /// <summary>
-        /// Gets or sets the user groups.
-        /// </summary>
-        /// <value>
-        /// The user groups.
-        /// </value>
-        public DbSet<UserGroup> UserGroups { get; set; }
 
         #endregion < Properties >
     }

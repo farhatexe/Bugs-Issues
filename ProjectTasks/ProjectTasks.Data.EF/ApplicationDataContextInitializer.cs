@@ -31,10 +31,16 @@
             context.Areas.Add(area12);
             context.Areas.Add(area11);
 
-            context.Groups.Add(new Group() { Label = "Admin", CreationDate = DateTime.Now, UpdateDate = DateTime.Now, CreationLogin = "M3gur0", UpdateLogin = "M3gur0" });
+
+            var group = new Group() { Label = "Admin", CreationDate = DateTime.Now, UpdateDate = DateTime.Now, CreationLogin = "M3gur0", UpdateLogin = "M3gur0" };
+            context.Groups.Add(group);
+            
+            var user = new User(){ Username = "M3gur0", Email = "jerome.bolot@gmail.com", Group = group, CreationDate = DateTime.Now, UpdateDate = DateTime.Now, CreationLogin = "M3gur0", UpdateLogin = "M3gur0" };
+            context.Users.Add(user);
+
             context.Reasons.Add(new Reason() { Label = "New" });
-            context.Runs.Add(new Run() { Title = "Run #0" });
-            context.Status.Add(new Status() { Code = "OP", Label = "Open" });
+            context.Runs.Add(new Sprint() { Title = "Run #0" });
+            context.Status.Add(new Status() { Label = "Open" });
             context.Tags.Add(new Tag() { Label = "Training" });
 
             context.SaveChanges();

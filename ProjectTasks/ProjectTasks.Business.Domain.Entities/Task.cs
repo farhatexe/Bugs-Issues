@@ -6,16 +6,16 @@
     /// <summary>
     /// Represents a task to do included in the project.
     /// </summary>
-    public class Task : Item, IEntity
+    public class Task : Backlog, IEntity
     {
         /// <summary>
-        /// Gets or sets the run identifier.
+        /// Gets or sets the sprint identifier.
         /// </summary>
         /// <value>
-        /// The run identifier.
+        /// The sprint identifier.
         /// </value>
         [Required]
-        public int RunId { get; set; }
+        public int SprintId { get; set; }
 
         /// <summary>
         /// Gets or sets the effort (in hours).
@@ -27,12 +27,12 @@
         public int Effort { get; set; }
 
         /// <summary>
-        /// Gets or sets the run.
+        /// Gets or sets the sprint.
         /// </summary>
         /// <value>
-        /// The run.
+        /// The sprint.
         /// </value>
-        [ForeignKey("RunId")]
-        public Run Run { get; set; }
+        [ForeignKey("SprintId")]
+        public Sprint Sprint { get; set; }
     }
 }

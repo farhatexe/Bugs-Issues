@@ -38,7 +38,7 @@
         /// <returns>The entire collection of available users.</returns>
         public IEnumerable<User> GetAllUsers() 
         {
-            return this.userRepository.All();
+            return this.userRepository.All(u => u.Group);
         }
 
         /// <summary>
@@ -50,7 +50,7 @@
         /// </returns>
         public User GetUser(int id)
         {
-            return this.userRepository.Single(a => a.Id == id);
+            return this.userRepository.Single(a => a.Id == id, u => u.Group);
         }
 
         /// <summary>

@@ -174,6 +174,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ApiControllers\AreaController.cs" />
+    <Compile Include="ApiControllers\RoleController.cs" />
+    <Compile Include="ApiControllers\TagController.cs" />
+    <Compile Include="ApiControllers\ReasonController.cs" />
+    <Compile Include="ApiControllers\StatusController.cs" />
     <Compile Include="ApiControllers\UserController.cs" />
     <Compile Include="ApiControllers\GroupController.cs" />
     <Compile Include="App_GlobalResources\Global.designer.cs">
@@ -214,9 +218,13 @@
     <Compile Include="App_Start\Startup.cs" />
     <Compile Include="App_Start\StyleImagePathBundle.cs" />
     <Compile Include="App_Start\StyleRelativePathTransform.cs" />
+    <Compile Include="Controllers\RoleController.cs" />
+    <Compile Include="Controllers\TagController.cs" />
     <Compile Include="Controllers\GroupController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ReasonController.cs" />
     <Compile Include="Controllers\ResourceController.cs" />
+    <Compile Include="Controllers\StatusController.cs" />
     <Compile Include="Controllers\TemplateController.cs" />
     <Compile Include="Controllers\AreaController.cs" />
     <Compile Include="Controllers\UserController.cs" />
@@ -242,8 +250,13 @@
     <Content Include="Content\Meguro\images\favicon.ico" />
     <Content Include="Content\Meguro\images\favicon.png" />
     <Content Include="Content\Meguro\images\logo.png" />
+    <Content Include="Content\Meguro\scripts\controllers\site.controllers.role.js" />
+    <Content Include="Content\Meguro\scripts\controllers\site.controllers.tag.js" />
+    <Content Include="Content\Meguro\scripts\controllers\site.controllers.reason.js" />
+    <Content Include="Content\Meguro\scripts\controllers\site.controllers.status.js" />
     <Content Include="Content\Meguro\scripts\controllers\site.controllers.layout.js" />
     <Content Include="Content\Meguro\scripts\directives\site.directives.jstree.js" />
+    <Content Include="Content\Meguro\scripts\directives\site.directives.spinner.js" />
     <Content Include="Content\Meguro\scripts\modules\site.modules.treetable.js" />
     <Content Include="Content\Plugins\bootstrap-toastr\toastr-icon.png" />
     <Content Include="Content\Plugins\bootstrap-toastr\toastr.css" />
@@ -725,6 +738,78 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Shared\DisplayTemplates\PageTitle.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Status\DisplayTemplates\Status.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Status\EditorTemplates\Status.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Status\Create.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Status\Detail.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Status\Edit.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Status\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Reason\DisplayTemplates\Reason.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Reason\EditorTemplates\Reason.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Reason\Create.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Reason\Detail.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Reason\Edit.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Reason\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Tag\Create.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Tag\Detail.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Tag\DisplayTemplates\Tag.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Tag\Edit.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Tag\EditorTemplates\Tag.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Tag\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Role\Create.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Role\Detail.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Role\DisplayTemplates\Role.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Role\Edit.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Role\EditorTemplates\Role.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Role\Index.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

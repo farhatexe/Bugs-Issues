@@ -1,13 +1,11 @@
 ﻿<div class="page-head">
     <div class="{{layoutMode}}">
-        <!-- BEGIN PAGE TITLE -->
         <div class="page-title">
             <h1>@Html.MvcSiteMap().SiteMapPath("PageTitle")</h1>
         </div>
         <div class="page-toolbar">
-            <!-- BEGIN THEME PANEL -->
             <div class="btn-group btn-theme-panel">
-                <a ng-click="layoutSwitching()" class="btn switch-layout normal">
+                <a ng-click="layoutSwitching()" class="btn switch-layout {{icon}}">
                     <i class="icon-settings"></i>
                 </a>
             </div>

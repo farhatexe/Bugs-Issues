@@ -5,22 +5,48 @@
 @if (Model.IsClickable || Model.Children.Any())
 {
     var hasChildren = Model.Children != null && Model.Children.Any();
-    var itemClass = Model.IsCurrentNode ? "active" : "";
+    var itemLiClass = Model.IsCurrentNode ? "active" : "";
     var itemUrl = Model.IsClickable ? "#" + Model.Url : "javascript:;";
-    itemClass = itemClass + (hasChildren ? " menu-dropdown classic-menu-dropdown" : "");
-    
-    <li class="@itemClass">
-        @if (hasChildren) { 
+    var icons = string.Empty;
+
+    if (Model.Attributes != null && Model.Attributes.Any(attr => attr.Key.Equals("icon")))
+    {
+        icons = Model.Attributes.Where(attr => attr.Key.Equals("icon")).Select(attr => ((string)attr.Value)).Aggregate((a, b) => a + " " + b);
+    }
+
+    if (Model.Ancestors.Any() && Model.Ancestors.Any(a => a.Ancestors.Any()) && hasChildren)
+    {
+        itemLiClass = itemLiClass + "  dropdown-submenu";
+    }
+    else if (hasChildren)
+    {
+        itemLiClass = itemLiClass + " menu-dropdown classic-menu-dropdown";
+    }
+
+    <li class="@itemLiClass">
+        @if (Model.Ancestors.Any() && !Model.Ancestors.Any(a => a.Ancestors.Any()))
+        {
             <a data-hover="megamenu-dropdown" data-close-others="true" data-toggle="dropdown" href="@itemUrl">
+                @if (!string.IsNullOrWhiteSpace(icons))
+                {
+                    <i class="fa @icons"></i>
+                }
                 @Model.Title
             </a>
-        } else {
-            <a href="@itemUrl">@Model.Title</a>
+        }
+        else
+        {
+            <a href="@itemUrl">
+                @if (!string.IsNullOrWhiteSpace(icons))
+                {
+                    <i class="fa @icons"></i>
+                }
+                @Model.Title
+            </a>
         }
         @if (Model.Children != null && Model.Children.Any())
         {
             <ul class="dropdown-menu pull-left">
-
                 @foreach (var node in Model.Children)
                 {
                     @Html.DisplayFor(m => node)

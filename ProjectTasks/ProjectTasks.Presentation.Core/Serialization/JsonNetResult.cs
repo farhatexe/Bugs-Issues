@@ -8,7 +8,7 @@
     /// <summary>
     /// Extension of JsonResult to use Newtownsoft JSON serializer instead of the default one.
     /// </summary>
-    internal class JsonNetResult : JsonResult
+    public class JsonNetResult : JsonResult
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="JsonNetResult"/> class.

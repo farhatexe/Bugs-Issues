@@ -100,7 +100,7 @@
     }]);
 
     app.controller('userCreateController', ['$scope', '$http', '$modalInstance', function ($scope, $http, $modalInstance) {
-        $scope.data = { Id: 0, StateLabel: 'unused' };
+        $scope.data = { Id: 0, GroupId: 0 };
 
         $scope.add = function () {
             $http

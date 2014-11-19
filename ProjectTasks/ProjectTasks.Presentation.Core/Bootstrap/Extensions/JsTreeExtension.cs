@@ -34,7 +34,7 @@
 
         private static void SetSelectedItems(ComboTreeItem item, ref List<ComboTreeItem> items)
         {
-            if (item != null && item.parent != "#")
+            if (item != null && ((string)item.parent) != "#")
             {
                 var parent = items.Where(p => p.id == item.parent).SingleOrDefault();
                 parent.state.opened = true;

@@ -1,6 +1,8 @@
 ﻿namespace ProjectTasks.Business.Domain.Entities
 {
+    using Newtonsoft.Json;
     using System;
+    using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
     using System.Threading;
 
@@ -71,6 +73,15 @@
         /// </value>
         [StringLength(64)]
         public string UpdateLogin { get; set; }
+
+        /// <summary>
+        /// Gets or sets the users.
+        /// </summary>
+        /// <value>
+        /// The users.
+        /// </value>
+        [JsonIgnore]
+        public ICollection<User> Users { get; set; }
 
         #endregion < Properties >
 

@@ -6,7 +6,13 @@
   <mvcSiteMapNode title="Dashboard" controller="home" action="dashboard" icon="fa-home">
     <mvcSiteMapNode title="Configuration" clickable="false" icon="fa-cogs">
       <mvcSiteMapNode title="Areas" controller="area" action="index" icon="fa-sitemap" />
+      <mvcSiteMapNode title="Reasons" controller="reason" action="index" icon="fa-info-circle" />
+      <mvcSiteMapNode title="Status" controller="status" action="index" icon="fa-list-alt" />
+      <mvcSiteMapNode title="Tags" controller="tag" action="index" icon="fa-comment-o" />
+    </mvcSiteMapNode>
+    <mvcSiteMapNode title="Security" clickable="false" icon="fa-lock">
       <mvcSiteMapNode title="Groups" controller="group" action="index" icon="fa-group" />
+      <mvcSiteMapNode title="Roles" controller="role" action="index" icon="fa-legal" />
       <mvcSiteMapNode title="Users" controller="user" action="index" icon="fa-user" />
     </mvcSiteMapNode>
   </mvcSiteMapNode>

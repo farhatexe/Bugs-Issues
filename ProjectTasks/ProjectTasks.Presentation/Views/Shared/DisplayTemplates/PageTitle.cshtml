@@ -1,7 +1,13 @@
 ﻿@model SiteMapPathHelperModel
 @{
     var currentNode = @Model.Nodes.FirstOrDefault(x => x.IsCurrentNode);
+    var icons = string.Empty;
+
+    if (currentNode.Attributes != null && currentNode.Attributes.Any(attr => attr.Key.Equals("icon")))
+        icons = currentNode.Attributes.Where(attr => attr.Key.Equals("icon")).Select(attr => ((string)attr.Value)).Aggregate((a, b) => a + " " + b);
 }
-@if (currentNode != null) {
+
+@if (currentNode != null)
+{
     @((String.IsNullOrEmpty(currentNode.Description) ? currentNode.Title : currentNode.Description))
 }

@@ -4,18 +4,19 @@
     using System.ComponentModel.DataAnnotations.Schema;
 
     /// <summary>
-    /// Represents a many to many relation between tag and item.
+    /// Represents a many to many relation between tag and a backlog item.
     /// </summary>
-    public class ItemTag : IEntity
+    public class BacklogTag : IEntity
     {
+
         /// <summary>
-        /// Gets or sets the item identifier.
+        /// Gets or sets the backlog identifier.
         /// </summary>
         /// <value>
-        /// The item identifier.
+        /// The backlog identifier.
         /// </value>
         [Key, Column(Order = 0)]
-        public int ItemId { get; set; }
+        public int BacklogId { get; set; }
 
         /// <summary>
         /// Gets or sets the tag identifier.
@@ -27,13 +28,13 @@
         public int TagId { get; set; }
 
         /// <summary>
-        /// Gets or sets the item.
+        /// Gets or sets the backlog.
         /// </summary>
         /// <value>
-        /// The item.
+        /// The backlog.
         /// </value>
-        [ForeignKey("ItemId")]
-        public Item Item { get; set; }
+        [ForeignKey("BacklogId")]
+        public Backlog Backlog { get; set; }
 
         /// <summary>
         /// Gets or sets the tag.

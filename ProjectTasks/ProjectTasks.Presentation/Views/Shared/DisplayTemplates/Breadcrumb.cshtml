@@ -3,7 +3,8 @@
     var currentNode = @Model.Nodes.FirstOrDefault(x => x.IsCurrentNode);
 }
 
-@if (currentNode != null) {
+@if (currentNode != null)
+{
     <ul class="page-breadcrumb breadcrumb">
         @foreach (var item in Model.Nodes)
         {

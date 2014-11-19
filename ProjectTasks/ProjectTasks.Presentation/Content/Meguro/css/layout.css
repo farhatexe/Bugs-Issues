@@ -7,17 +7,50 @@
     pointer-events: none;
 }
 
+
+/*------------------------*/
+/*      Modal style       */
+/*------------------------*/
 .modal.fullscreen .modal-dialog {
     width: 95%;
 }
-
 .modal {
     z-index: 10060 !important;
 }
+/* Modal backdrop fix*/
+.modal-backdrop{
+    height: 100%
+}
+.modal-open {
+    overflow-y: hidden !important;
+}
+/* Fix select2 z-index in modal */
+.modal-open .select2-drop-mask {
+  z-index: 10999;
+}
+.modal-open .select2-drop {
+  z-index: 11000;
+}
+.modal-open .select2-search {
+  z-index: 10053;
+}
+/*------------------------*/
+/*      End Modal style   */
+/*------------------------*/
+
 
 .switch-layout.normal > .icon-settings:before {
     content: "\e057";
 }
 .switch-layout.fluid > .icon-settings:before {
     content: "\e058";
+}
+
+.portlet > .portlet-title > .actions .btn-icon-only.btn-default.ng-fullscreen {
+    font-family: FontAwesome;
+    color: #a0a0a0;
+    padding-top: 3px;
+}
+.portlet > .portlet-title > .actions .btn-icon-only.btn-default.ng-fullscreen:before {
+    content: "\f065";
 }

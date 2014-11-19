@@ -2,21 +2,23 @@
 
 <div class="portlet @Model.Color @Model.CssClass" id="@Model.Id">
     <div class="portlet-title">
-        
-        @if(Model.Caption != null) {
+
+        @if (Model.Caption != null)
+        {
             <div class="caption">
                 @Model.Caption(Html)
             </div>
         }
 
-        @if(Model.Actions != null) {
+        @if (Model.Actions != null)
+        {
             <div class="actions">
                 @Model.Actions(Html)
             </div>
         }
 
     </div>
-    
+
     <div class="portlet-body">
         @Model.Content(Html)
     </div>

@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
-VisualStudioVersion = 12.0.30723.0
+VisualStudioVersion = 12.0.31101.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1. Presentation", "1. Presentation", "{28E65CD3-C003-42F2-B285-8E70751C55A0}"
 EndProject
@@ -32,6 +32,12 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjectTasks.Business.Services", "ProjectTasks.Business.Services\ProjectTasks.Business.Services.csproj", "{B0E27FDF-A261-47F9-AF67-D1A2FCB810FE}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjectTasks.Presentation", "ProjectTasks.Presentation\ProjectTasks.Presentation.csproj", "{C0F5DEC4-17FC-465B-82F9-DCA842C1869F}"
+	ProjectSection(ProjectDependencies) = postProject
+		{06D3D61A-1DB5-4724-8923-E45127F22AFF} = {06D3D61A-1DB5-4724-8923-E45127F22AFF}
+		{45AE1329-F8BE-4495-91A2-AB5D13E5622F} = {45AE1329-F8BE-4495-91A2-AB5D13E5622F}
+		{B0E27FDF-A261-47F9-AF67-D1A2FCB810FE} = {B0E27FDF-A261-47F9-AF67-D1A2FCB810FE}
+		{E2E263E2-67DC-48C8-9707-14863C956FEA} = {E2E263E2-67DC-48C8-9707-14863C956FEA}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjectTasks.Presentation.Core", "ProjectTasks.Presentation.Core\ProjectTasks.Presentation.Core.csproj", "{87124052-C9D6-4110-BCEB-061E9B9C4853}"
 EndProject

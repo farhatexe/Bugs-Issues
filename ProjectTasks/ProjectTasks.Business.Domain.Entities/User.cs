@@ -1,8 +1,10 @@
 ﻿namespace ProjectTasks.Business.Domain.Entities
 {
+    using Newtonsoft.Json;
     using System;
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
+    using System.ComponentModel.DataAnnotations.Schema;
     using System.Threading;
 
     /// <summary>
@@ -47,7 +49,16 @@
         /// </value>
         [StringLength(64), MinLength(8)]
         public string Password { get; set; }
-        
+
+        /// <summary>
+        /// Gets or sets the group identifier.
+        /// </summary>
+        /// <value>
+        /// The group identifier.
+        /// </value>
+        [Required]
+        public int GroupId { get; set; }
+
         /// <summary>
         /// Gets or sets the creation date.
         /// </summary>
@@ -83,12 +94,31 @@
         public string UpdateLogin { get; set; }
 
         /// <summary>
-        /// Gets or sets the groups.
+        /// Gets or sets the group.
         /// </summary>
         /// <value>
-        /// The groups.
+        /// The group.
         /// </value>
-        public virtual ICollection<UserGroup> Groups { get; set; }
+        [ForeignKey("GroupId"), JsonIgnore]
+        public virtual Group Group { get; set; }
+
+        /// <summary>
+        /// Gets the group label.
+        /// </summary>
+        /// <value>
+        /// The group label.
+        /// </value>
+        [NotMapped]
+        public string GroupLabel 
+        { 
+            get 
+            {
+                if (this.Group == null)
+                    return string.Empty;
+                    
+                return this.Group.Label;
+            } 
+        }
 
         #endregion < Properties >
 

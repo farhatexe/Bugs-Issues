@@ -1,0 +1,14 @@
+﻿@model Reason
+
+<div class="row form-horizontal">
+    <div class="@BootstrapColumns.Medium.Col12">
+        <div class="form-body">
+            <div class="form-group">
+                @Html.LabelFor(c => c.Label, new { @class = "control-label " + @BootstrapColumns.Medium.Col4 })
+                <div class="@BootstrapColumns.Medium.Col8">
+                    <span class="form-control disabled">{{ data.Label }}</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

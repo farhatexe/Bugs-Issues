@@ -1,12 +1,13 @@
 ﻿namespace ProjectTasks.Presentation.Core.Bootstrap.Component.DataTables
 {
+    using ProjectTasks.Presentation.Core.Serialization;
     using System.Web.Mvc;
 
     /// <summary>
     /// Represents a full datatables JSON object containing all the properties required by the datatables component.
     /// </summary>
     /// <typeparam name="T"></typeparam>
-    public class DataTablesResult<T> : JsonResult where T : class, new()
+    public class DataTablesResult<T> : JsonNetResult where T : class, new()
     {
         /// <summary>
         /// Build a new DataTables result.

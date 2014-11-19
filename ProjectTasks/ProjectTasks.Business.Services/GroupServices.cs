@@ -56,7 +56,7 @@
         /// <summary>
         /// Creates the specified group.
         /// </summary>
-        /// <param name="area">The group.</param>
+        /// <param name="group">The group.</param>
         /// <returns>The created group (with id, creation and update date and creation and update login set).</returns>
         public Group CreateGroup(Group group)
         {
@@ -73,7 +73,7 @@
         /// <summary>
         /// Updates the specified group.
         /// </summary>
-        /// <param name="area">The group.</param>
+        /// <param name="group">The group.</param>
         /// <returns>The updated group (with update date and update login set).</returns>
         public Group UpdateGroup(Group group)
         {

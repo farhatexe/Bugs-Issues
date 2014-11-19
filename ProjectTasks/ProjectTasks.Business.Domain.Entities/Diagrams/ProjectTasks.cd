@@ -1,9 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
   <Class Name="ProjectTasks.Business.Domain.Entities.Area" BaseTypeListCollapsed="true">
-    <Position X="7.75" Y="0.75" Width="1.5" />
+    <Position X="11.5" Y="0.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAACAAAAEAAAAAAAAAAAQAAAAAAAAAAAAgAAAAAAAAA=</HashCode>
+      <HashCode>QAACAAAAEQAAAAAIAAAEQAAAAAAAAAAAAgAQABAAgAA=</HashCode>
       <FileName>Area.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
@@ -12,20 +12,17 @@
     <Lollipop Position="0.2" Collapsed="true" />
   </Class>
   <Class Name="ProjectTasks.Business.Domain.Entities.Bug">
-    <Position X="1.5" Y="11.5" Width="1.5" />
+    <Position X="1.5" Y="12.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAQAAIAAAAAAAAAAAAAAAAAAAAAEAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAQAAIAAAAAAAAAAAgAAAAAAEAAEAAAAAA=</HashCode>
       <FileName>Bug.cs</FileName>
     </TypeIdentifier>
-    <ShowAsAssociation>
-      <Property Name="Reason" />
-    </ShowAsAssociation>
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="ProjectTasks.Business.Domain.Entities.Group" BaseTypeListCollapsed="true">
-    <Position X="7.75" Y="3.5" Width="1.5" />
+    <Position X="9.5" Y="3.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAACAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>QAACACAAEQAgAAAIAAAAAAAAAAAAAAAAAAAQAAAAAAA=</HashCode>
       <FileName>Group.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" Collapsed="true" />
@@ -37,40 +34,29 @@
       <FileName>GroupRole.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
-      <Property Name="Group" />
       <Property Name="Role" />
+      <Property Name="Group" />
     </ShowAsAssociation>
     <Lollipop Position="0.2" Collapsed="true" />
   </Class>
-  <Class Name="ProjectTasks.Business.Domain.Entities.Item">
+  <Class Name="ProjectTasks.Business.Domain.Entities.Backlog">
     <Position X="3.75" Y="8.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAACAAAMAAAgAEAAAAAAAAgAAAAAgAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Item.cs</FileName>
+      <HashCode>AAACAAAMAAAgAEAAAAAAAAgAAAAAgAAAAAAAAAAAAEA=</HashCode>
+      <FileName>Backlog.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
-      <Property Name="Status" />
       <Property Name="AssignTo" />
+      <Property Name="Status" />
     </ShowAsAssociation>
     <Lollipop Position="0.2" />
   </Class>
-  <Class Name="ProjectTasks.Business.Domain.Entities.ItemTag" BaseTypeListCollapsed="true">
-    <Position X="6.5" Y="8.75" Width="1.5" />
+  <Class Name="ProjectTasks.Business.Domain.Entities.Tag" BaseTypeListCollapsed="true">
+    <Position X="1.5" Y="14.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAgAAAAgAAAAAAEAAAAAAAAAAAAAAAAAAE=</HashCode>
-      <FileName>ItemTag.cs</FileName>
-    </TypeIdentifier>
-    <ShowAsAssociation>
-      <Property Name="Item" />
-      <Property Name="Tag" />
-    </ShowAsAssociation>
-    <Lollipop Position="0.2" Collapsed="true" />
-  </Class>
-  <Class Name="ProjectTasks.Business.Domain.Entities.Reason" BaseTypeListCollapsed="true">
-    <Position X="1.5" Y="13.5" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAACAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Reason.cs</FileName>
+      <HashCode>QAACAAAAEQAAAAAIAAAAAAAAAAAAAAAAAAAQAAAAAAA=</HashCode>
+      <FileName>Tag.cs</FileName>
+      <NewMemberFileName>Reason.cs</NewMemberFileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" Collapsed="true" />
   </Class>
@@ -82,11 +68,11 @@
     </TypeIdentifier>
     <Lollipop Position="0.2" Collapsed="true" />
   </Class>
-  <Class Name="ProjectTasks.Business.Domain.Entities.Run" BaseTypeListCollapsed="true">
+  <Class Name="ProjectTasks.Business.Domain.Entities.Sprint" BaseTypeListCollapsed="true">
     <Position X="4.75" Y="14.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAACAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAIAAAAAAA=</HashCode>
-      <FileName>Run.cs</FileName>
+      <HashCode>AAACAAAAABAAAEAAAAAAAAAAAAAAAAAAAAAIAAAAAAA=</HashCode>
+      <FileName>Sprint.cs</FileName>
     </TypeIdentifier>
     <ShowAsCollectionAssociation>
       <Property Name="Tasks" />
@@ -96,52 +82,37 @@
   <Class Name="ProjectTasks.Business.Domain.Entities.Status" BaseTypeListCollapsed="true">
     <Position X="1.25" Y="8.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAACAAAAEAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>QAACAAAAEQAAAAAIAAAAAAAAAAAAAAAAAAAQAAAAAAA=</HashCode>
       <FileName>Status.cs</FileName>
-    </TypeIdentifier>
-    <Lollipop Position="0.2" Collapsed="true" />
-  </Class>
-  <Class Name="ProjectTasks.Business.Domain.Entities.Tag" BaseTypeListCollapsed="true">
-    <Position X="6.75" Y="11.25" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAACAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Tag.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" Collapsed="true" />
   </Class>
   <Class Name="ProjectTasks.Business.Domain.Entities.Task">
     <Position X="4.5" Y="11.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAABAAAAAEAAAAAAAAAAAAAAI=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAFAAAAAAAAAAAIAAAAAAAAA=</HashCode>
       <FileName>Task.cs</FileName>
     </TypeIdentifier>
-    <ShowAsAssociation>
-      <Property Name="Run" />
-    </ShowAsAssociation>
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="ProjectTasks.Business.Domain.Entities.User" BaseTypeListCollapsed="true">
-    <Position X="4.75" Y="5.25" Width="1.5" />
+    <Position X="6.25" Y="5.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAACAEAAACAAAAAAAQAAAAAAAAAAAAACAAAAAAAAAAA=</HashCode>
+      <HashCode>QAACAEAEASAAAAAIAQAAAAAAAAAAAAACACAQAAAAAAA=</HashCode>
       <FileName>User.cs</FileName>
     </TypeIdentifier>
-    <ShowAsCollectionAssociation>
-      <Property Name="Groups" />
-    </ShowAsCollectionAssociation>
     <Lollipop Position="0.2" Collapsed="true" />
   </Class>
-  <Class Name="ProjectTasks.Business.Domain.Entities.UserGroup" BaseTypeListCollapsed="true">
-    <Position X="7.75" Y="5.5" Width="1.5" />
+  <Class Name="ProjectTasks.Business.Domain.Entities.BacklogTag">
+    <Position X="6.75" Y="9.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAABAEAEAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>UserGroup.cs</FileName>
+      <HashCode>AAAIAAAAAAAgAAAAAAABAAAAAAAAAAAAAAAAAAAAAAE=</HashCode>
+      <FileName>BacklogTag.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
-      <Property Name="Group" />
-      <Property Name="User" />
+      <Property Name="Backlog" />
     </ShowAsAssociation>
-    <Lollipop Position="0.2" Collapsed="true" />
+    <Lollipop Position="0.2" />
   </Class>
   <Font Name="Segoe UI" Size="9" />
 </ClassDiagram>

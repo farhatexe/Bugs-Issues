@@ -1,0 +1,42 @@
+﻿@model Tag
+
+<div class="row">
+    <div class="@BootstrapColumns.Medium.Col12 @BootstrapColumns.Small.Col12">
+        <div class="portlet light" id="portletTag">
+            <div class="portlet-title">
+                <div class="caption">
+                    <i class="fa fa-cogs font-green-sharp"></i>
+                    <span class="caption-subject font-green-sharp bold uppercase">Tag management</span>
+                </div>
+                <div class="actions">
+                    <a class="btn btn-circle btn-icon-only btn-default ng-fullscreen" ng-href="" ng-click="handlePortletFullscreen('portletTag')" data-original-title="" title="">
+                    </a>
+                </div>
+            </div>
+            <div class="portlet-body">
+                <table data-datatable="" data-dt-options="dtOptions" data-dt-columns="dtColumns" class="table table-hover table-bordered" data-dt-localize="" data-dt-template="rowTemplate">
+                    <thead>
+                        <tr>
+                            <th data-dt-prop="Id" data-dt-column-option='[{"key": "bSortable", "value": false}, {"key": "sWidth", "value": "13px"}]'></th>
+                            <th data-dt-prop="Id" data-dt-column-option='[{"key": "bSortable", "value": false}, {"key": "sWidth", "value": "13px"}]'></th>
+                            <th data-dt-prop="Label">@Html.DisplayNameFor(x => x.Label)</th>
+                        </tr>
+                    </thead>
+                    <tfoot>
+                        <tr>
+                            <td colspan="3">
+                                <a data-ng-click="createTag()" title="@Resources.Global.Add" class="pull-right" href="javascript:void(0);"><i class="fa @FontAwesome.Plus_square"></i>&nbsp;@Resources.Global.Add</a>
+                            </td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/template" id="rowTemplate">
+    <td><a data-ng-click="openTag(Id)" title="@Resources.Global.View" data-id="{{Id}}"><i class="fa @FontAwesome.Search"></i></a></td>
+    <td><a data-ng-click="deleteTag(Id)" title="@Resources.Global.View" data-id="{{Id}}"><i class="fa @FontAwesome.Trash"></i></a></td>
+    <td>{{Label}}</td>
+</script>

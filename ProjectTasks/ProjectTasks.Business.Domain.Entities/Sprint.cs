@@ -6,7 +6,7 @@
     /// <summary>
     /// Represents an iteration of development (aka run).
     /// </summary>
-    public class Run : IEntity
+    public class Sprint : IEntity
     {
         /// <summary>
         /// Gets or sets the identifier.
@@ -32,5 +32,13 @@
         /// The tasks.
         /// </value>
         public ICollection<Task> Tasks { get; set; }
+
+        /// <summary>
+        /// Gets or sets the bugs.
+        /// </summary>
+        /// <value>
+        /// The bugs.
+        /// </value>
+        public ICollection<Bug> Bugs { get; set; }
     }
 }

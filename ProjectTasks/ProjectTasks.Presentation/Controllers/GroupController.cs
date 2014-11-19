@@ -27,6 +27,15 @@
         /// <summary>
         /// Gets all available groups.
         /// </summary>
+        /// <returns>A Json result that contains all available groups.</returns>
+        public JsonResult GetAllReferential(string term)
+        {
+            return Json(this.groupServices.GetAllGroups().OrderBy(group => group.Label).ToList(), JsonRequestBehavior.AllowGet);
+        }
+
+        /// <summary>
+        /// Gets all available groups.
+        /// </summary>
         /// <param name="request">The request.</param>
         /// <returns>A DataTables result that contains all available groups.</returns>
         [HttpPost]

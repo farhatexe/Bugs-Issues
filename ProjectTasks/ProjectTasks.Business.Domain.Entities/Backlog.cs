@@ -1,13 +1,17 @@
 ﻿namespace ProjectTasks.Business.Domain.Entities
 {
+    using System;
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
+    using System.Threading;
 
     /// <summary>
     /// Represents an item 
     /// </summary>
-    public abstract class Item : IEntity
+    public abstract class Backlog : IEntity
     {
+        #region < Properties >
+
         /// <summary>
         /// Gets or sets the identifier.
         /// </summary>
@@ -25,6 +29,14 @@
         /// </value>
         [Required]
         public int StatusId { get; set; }
+
+        /// <summary>
+        /// Gets or sets the complexity.
+        /// </summary>
+        /// <value>
+        /// The complexity.
+        /// </value>
+        public int Complexity { get; set; }
 
         /// <summary>
         /// Gets or sets the user identifier.
@@ -68,5 +80,57 @@
         /// </value>
         [ForeignKey("StatusId")]
         public Status Status { get; set; }
+
+        /// <summary>
+        /// Gets or sets the creation date.
+        /// </summary>
+        /// <value>
+        /// The creation date.
+        /// </value>
+        public DateTime CreationDate { get; set; }
+
+        /// <summary>
+        /// Gets or sets the creation login.
+        /// </summary>
+        /// <value>
+        /// The creation login.
+        /// </value>
+        [StringLength(64)]
+        public string CreationLogin { get; set; }
+
+        /// <summary>
+        /// Gets or sets the update date.
+        /// </summary>
+        /// <value>
+        /// The update date.
+        /// </value>
+        public DateTime UpdateDate { get; set; }
+
+        /// <summary>
+        /// Gets or sets the update login.
+        /// </summary>
+        /// <value>
+        /// The update login.
+        /// </value>
+        [StringLength(64)]
+        public string UpdateLogin { get; set; }
+
+        #endregion < Properties >
+
+        #region < Constructors >
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Backlog"/> class.
+        /// </summary>
+        public Backlog()
+        {
+            this.CreationDate = DateTime.Now;
+            this.CreationLogin = Thread.CurrentPrincipal.Identity.Name;
+
+            this.UpdateDate = DateTime.Now;
+            this.UpdateLogin = Thread.CurrentPrincipal.Identity.Name;
+        }
+
+        #endregion < Contructors >
     }
 }
